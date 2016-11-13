@@ -81,7 +81,7 @@ public class MainActivity2 extends AppCompatActivity {
             mOptionGrid.getChildAt(i).setClickable(false);
             mOptionGrid.getChildAt(i).setFocusable(false);
         }
-
+    //
     }
 
     private Boolean selectMainWord(){
