@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Benkyoshimasu</string>
+    <string name="action_settings">Congiguración</string>
+    <string name="max_lesson">Ultima Lección</string>
+    <string name="vocabulary">Vocabulario</string>
+    <string name="kanjis">Kanjis</string>
+
+    <!-- NO TRADUCIR!!!!!!!!!! -->
+    <string name="max_lesson_key">max_lesson_key</string>
+    <string name="title_activity_settings">Settings</string>
+</resources>
