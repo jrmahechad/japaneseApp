@@ -71,7 +71,7 @@ public class MainActivity2 extends AppCompatActivity {
         loadLesson();
         Boolean japanese= selectMainWord();
         Log.e("he",mOptionGrid.getHeight()+"");
-        OptionsAdapter adapter = new OptionsAdapter(this,options,japanese,mainWord,null);
+        OptionsAdapter adapter = new OptionsAdapter(this,options,japanese);
         mOptionGrid.setAdapter(adapter);
     }
 

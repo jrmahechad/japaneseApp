@@ -2,16 +2,21 @@ package com.jrmd.benkyoshimasu.fragments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -30,7 +35,7 @@ import java.util.Random;
  * Created by julian on 13/11/2016.
  */
 
-public class VocabularyFragment extends Fragment implements View.OnClickListener{
+public class VocabularyFragment extends Fragment{
 
     View rootView;
     private TextView mMainWord,mKanji,mCorrectAnswer;
@@ -40,6 +45,7 @@ public class VocabularyFragment extends Fragment implements View.OnClickListener
     private List<Word> words;
     private Random randomGenerator;
     private Integer lesson;
+    private Boolean japanese;
     /*Button mOption1,mOption2,mOption3,mOption4;
     List<Button> buttons;*/
 
@@ -102,9 +108,44 @@ public class VocabularyFragment extends Fragment implements View.OnClickListener
 
     public  void refreshData(){
         loadLesson();
-        Boolean japanese= selectMainWord();
-        OptionsAdapter adapter = new OptionsAdapter(getActivity(),options,japanese,mainWord,this);
+        japanese= selectMainWord();
+        OptionsAdapter adapter = new OptionsAdapter(getActivity(),options,japanese);
         mOptionGrid.setAdapter(adapter);
+        mOptionGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View v, int i, long l) {
+                Log.e("click","click");
+                notClickable();
+                TextView optionTextClicked = (TextView) v.findViewById(R.id.word_option_text);
+
+                Boolean result=false;
+                if(japanese){
+                    result= mainWord.getSpanish().equals(options.get(i).getSpanish());
+                }else{
+                    result= mainWord.getJapanese().equals(options.get(i).getJapanese());
+                }
+                Integer delayTime=1000;
+                if(result){
+                    v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myGreen));
+                    optionTextClicked.setTextColor(Color.WHITE);
+
+                }else {
+                    highlightCorrect(japanese);
+                    v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myRed));
+                    optionTextClicked.setTextColor(Color.WHITE);
+                    delayTime=2000;
+                }
+
+                Handler mHandler = new Handler();
+                mHandler.postDelayed(new Runnable() {
+                    public void run() {
+                       refreshData();
+                    }
+                }, delayTime);
+
+            }
+        });
+        clickable();
     }
 
     public void notClickable(){
@@ -112,6 +153,14 @@ public class VocabularyFragment extends Fragment implements View.OnClickListener
         for(int i=0;i<countChildren;i++){
             mOptionGrid.getChildAt(i).setClickable(false);
             mOptionGrid.getChildAt(i).setFocusable(false);
+        }
+
+    }
+    public void clickable(){
+        int countChildren=mOptionGrid.getChildCount();
+        for(int i=0;i<countChildren;i++){
+            mOptionGrid.getChildAt(i).setClickable(true);
+            mOptionGrid.getChildAt(i).setFocusable(true);
         }
 
     }
@@ -160,20 +209,4 @@ public class VocabularyFragment extends Fragment implements View.OnClickListener
 
     }
 
-    @Override
-    public void onClick(View view) {
-        /*switch (view.getId()){
-            case vocabulary_button_opcion_1:
-            case vocabulary_button_opcion_2:
-            case vocabulary_button_opcion_3:
-            case vocabulary_button_opcion_4:
-
-                break;
-            default:
-                break;
-
-
-        }*/
-
-    }
 }
