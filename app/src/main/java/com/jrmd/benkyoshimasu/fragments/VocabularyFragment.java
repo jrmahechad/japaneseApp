@@ -67,13 +67,16 @@ public class VocabularyFragment extends Fragment{
         mCorrectAnswer = (TextView) rootView.findViewById(R.id.correct_answer);
         mOptionGrid = (GridView) rootView.findViewById(R.id.options_grid);
 
-
-
-        lessonsWords = Utils.loadAllWords();
-        refreshData();
-
         return rootView;
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        lessonsWords = Utils.loadAllWords();
+        refreshData();
+    }
+
     public void loadLesson(){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         List<Boolean> tempLessons=new ArrayList<Boolean>();
@@ -94,7 +97,7 @@ public class VocabularyFragment extends Fragment{
             editor.commit();
             activeLessons.add(1);
             Snackbar snackbar = Snackbar
-                    .make(rootView, "Welcome to AndroidHive", Snackbar.LENGTH_LONG);
+                    .make(rootView,getString(R.string.warning_no_lesson), Snackbar.LENGTH_LONG);
             snackbar.show();
         }
         words= new ArrayList<Word>();
