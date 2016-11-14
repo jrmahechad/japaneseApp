@@ -3,9 +3,22 @@
     <string name="action_settings">Configuración</string>
     <string name="max_lesson">Ultima Lección</string>
     <string name="vocabulary">Vocabulario</string>
+    <string name="title_activity_settings">Configuración</string>
     <string name="kanjis">Kanjis</string>
+    <string name="lessons">Lecciones</string>
+    <string name="lesson1">Lección 1</string>
+    <string name="lesson2">Lección 2</string>
+    <string name="lesson3">Lección 3</string>
+    <string name="lesson4">Lección 4</string>
+    <string name="lesson5">Lección 5</string>
+    <string name="lesson6">Lección 6</string>
 
     <!-- NO TRADUCIR!!!!!!!!!! -->
-    <string name="max_lesson_key">max_lesson_key</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="lesson_1_key">lesson_1_key</string>
+    <string name="lesson_2_key">lesson_2_key</string>
+    <string name="lesson_3_key">lesson_3_key</string>
+    <string name="lesson_4_key">lesson_4_key</string>
+    <string name="lesson_5_key">lesson_5_key</string>
+    <string name="lesson_6_key">lesson_6_key</string>
+
 </resources>

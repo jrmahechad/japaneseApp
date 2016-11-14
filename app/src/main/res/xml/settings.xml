@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <PreferenceCategory android:title="@string/lessons">
+
+    </PreferenceCategory>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/lesson1"
+        android:key="@string/lesson_1_key" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/lesson2"
+        android:key="@string/lesson_2_key" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/lesson3"
+        android:key="@string/lesson_3_key" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/lesson4"
+        android:key="@string/lesson_4_key" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/lesson5"
+        android:key="@string/lesson_5_key" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/lesson6"
+        android:key="@string/lesson_6_key" />
+
+</PreferenceScreen>

@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +24,7 @@ import com.jrmd.benkyoshimasu.R;
 import com.jrmd.benkyoshimasu.Utils;
 import com.jrmd.benkyoshimasu.activity.SettingsActivity;
 import com.jrmd.benkyoshimasu.adapter.OptionsAdapter;
+import com.jrmd.benkyoshimasu.object.Lessons;
 import com.jrmd.benkyoshimasu.object.Word;
 
 import java.util.ArrayList;
@@ -44,8 +45,9 @@ public class VocabularyFragment extends Fragment{
     private List<Word> options;
     private List<Word> words;
     private Random randomGenerator;
-    private Integer lesson;
+    private List<Integer>activeLessons;
     private Boolean japanese;
+    private Lessons lessonsWords;
     /*Button mOption1,mOption2,mOption3,mOption4;
     List<Button> buttons;*/
 
@@ -67,29 +69,61 @@ public class VocabularyFragment extends Fragment{
 
 
 
-        words = Utils.loadAllWords();
+        lessonsWords = Utils.loadAllWords();
         refreshData();
-        /*mOption1 = (Button) rootView.findViewById(vocabulary_button_opcion_1);
-        mOption2 = (Button) rootView.findViewById(vocabulary_button_opcion_2);
-        mOption3 = (Button) rootView.findViewById(vocabulary_button_opcion_3);
-        mOption4 = (Button) rootView.findViewById(vocabulary_button_opcion_4);
-        mOption1.setOnClickListener(this);
-        mOption2.setOnClickListener(this);
-        mOption3.setOnClickListener(this);
-        mOption4.setOnClickListener(this);
-        buttons.add(mOption1);
-        buttons.add(mOption2);
-        buttons.add(mOption3);
-        buttons.add(mOption4);*/
-
-
-
 
         return rootView;
     }
     public void loadLesson(){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        lesson =Integer.valueOf(prefs.getString(getString(R.string.max_lesson_key),"1"));
+        List<Boolean> tempLessons=new ArrayList<Boolean>();
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_1_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_2_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_3_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_4_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_5_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_6_key),false));
+        activeLessons= new ArrayList<Integer>();
+        for(int i=0;i<tempLessons.size();i++){
+            if(tempLessons.get(i))
+                activeLessons.add(i+1);
+        }
+        if(activeLessons.size()==0){
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean(getString(R.string.lesson_1_key), true);
+            editor.commit();
+            activeLessons.add(1);
+            Snackbar snackbar = Snackbar
+                    .make(rootView, "Welcome to AndroidHive", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+        words= new ArrayList<Word>();
+        for(Integer lesson :activeLessons){
+            switch (lesson){
+                case 1:
+                    words.addAll(lessonsWords.getWordsLesson1());
+                    break;
+                case 2:
+                    words.addAll(lessonsWords.getWordsLesson2());
+                    break;
+                case 3:
+                    words.addAll(lessonsWords.getWordsLesson3());
+                    break;
+                case 4:
+                    words.addAll(lessonsWords.getWordsLesson4());
+                    break;
+                case 5:
+                    words.addAll(lessonsWords.getWordsLesson5());
+                    break;
+                case 6:
+                    words.addAll(lessonsWords.getWordsLesson6());
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -114,7 +148,6 @@ public class VocabularyFragment extends Fragment{
         mOptionGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View v, int i, long l) {
-                Log.e("click","click");
                 notClickable();
                 TextView optionTextClicked = (TextView) v.findViewById(R.id.word_option_text);
 
@@ -168,24 +201,13 @@ public class VocabularyFragment extends Fragment{
     private Boolean selectMainWord(){
         mCorrectAnswer.setText("");
         Integer mainPosition=randomGenerator.nextInt(words.size());
-        boolean mainWordFound=false;
-        do{
-            mainWord=words.get(mainPosition);
-            if(mainWord.getLevel()<=lesson)
-                mainWordFound=true;
-            else
-                mainPosition=randomGenerator.nextInt(words.size());
-        }while (!mainWordFound);
-
+        mainWord=words.get(mainPosition);
         List<Word> wordsCopy=new ArrayList<Word>(words);
         options = new ArrayList<Word>();
-        //Collections.copy(wordsCopy,words);
         wordsCopy.remove(mainPosition);
-
         Integer count=0;
         while(count<3){
             Integer wrongOptionPosition= randomGenerator.nextInt(wordsCopy.size());
-            //if(wordsCopy.get(wrongOptionPosition).getLevel()<=lesson&&!options.contains(wordsCopy.get(wrongOptionPosition))){
             if(!options.contains(wordsCopy.get(wrongOptionPosition))){
                 options.add(wordsCopy.get(wrongOptionPosition));
                 wordsCopy.remove(wrongOptionPosition);
