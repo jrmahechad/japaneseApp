@@ -5,6 +5,7 @@
     <string name="vocabulary">Vocabulario</string>
     <string name="title_activity_settings">Configuración</string>
     <string name="kanjis">Kanjis</string>
+    <string name="warning_no_lesson">No tiene lecciones seleccionadas, se selecciono la lección 1</string>
     <string name="lessons">Lecciones</string>
     <string name="lesson1">Lección 1</string>
     <string name="lesson2">Lección 2</string>
