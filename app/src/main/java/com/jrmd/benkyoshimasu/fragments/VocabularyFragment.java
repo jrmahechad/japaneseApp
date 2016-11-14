@@ -151,7 +151,7 @@ public class VocabularyFragment extends Fragment{
         mOptionGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View v, int i, long l) {
-                notClickable();
+                mOptionGrid.setEnabled(false);
                 TextView optionTextClicked = (TextView) v.findViewById(R.id.word_option_text);
 
                 Boolean result=false;
@@ -181,24 +181,7 @@ public class VocabularyFragment extends Fragment{
 
             }
         });
-        clickable();
-    }
-
-    public void notClickable(){
-        int countChildren=mOptionGrid.getChildCount();
-        for(int i=0;i<countChildren;i++){
-            mOptionGrid.getChildAt(i).setClickable(false);
-            mOptionGrid.getChildAt(i).setFocusable(false);
-        }
-
-    }
-    public void clickable(){
-        int countChildren=mOptionGrid.getChildCount();
-        for(int i=0;i<countChildren;i++){
-            mOptionGrid.getChildAt(i).setClickable(true);
-            mOptionGrid.getChildAt(i).setFocusable(true);
-        }
-
+        mOptionGrid.setEnabled(true);
     }
 
     private Boolean selectMainWord(){
