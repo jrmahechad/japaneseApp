@@ -1,5 +1,6 @@
 package com.jrmd.benkyoshimasu.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jrmd.benkyoshimasu.R;
@@ -40,7 +42,7 @@ import java.util.Random;
 public class KanjisFragment extends Fragment{
 
     View rootView;
-    private TextView mMeaning,mCorrectAnswer;
+    private TextView mMeaning,mCorrectAnswer,mCorrectCount,mIncorrectCount;
     private GridView mOptionGrid,mReadingsGrid;
     private Kanji mainKanji;
     private List<Kanji> options;
@@ -48,12 +50,14 @@ public class KanjisFragment extends Fragment{
     private Random randomGenerator;
     private List<Integer>activeLessons;
     private LessonsKanjis lessonsKanjis;
+    SharedPreferences pref;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        pref=getActivity().getPreferences(Context.MODE_PRIVATE);
     }
 
     @Nullable
@@ -129,7 +133,12 @@ public class KanjisFragment extends Fragment{
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.main_answers, menu);
+        LinearLayout itemC =(LinearLayout) menu.findItem(R.id.action_correct_answers).getActionView();
+        LinearLayout itemW =(LinearLayout) menu.findItem(R.id.action_wrong_answer).getActionView();
+        mCorrectCount = (TextView) itemC.findViewById(R.id.correct_answer_count);
+        mIncorrectCount = (TextView) itemW.findViewById(R.id.wrong_answer_count);
+        showAnswerCounts();
     }
 
     @Override
@@ -168,6 +177,7 @@ public class KanjisFragment extends Fragment{
                     optionTextClicked.setTextColor(Color.WHITE);
                     delayTime=2000;
                 }
+                updateAnswerCount(result);
 
                 Handler mHandler = new Handler();
                 mHandler.postDelayed(new Runnable() {
@@ -218,6 +228,26 @@ public class KanjisFragment extends Fragment{
         String text = mainKanji.getKanji();
         mCorrectAnswer.setText(text);
 
+    }
+
+    public void updateAnswerCount(Boolean result){
+        SharedPreferences.Editor editor = pref.edit();
+        if(result){
+            editor.putInt(getString(R.string.pref_correct_kanji), pref.getInt(getString(R.string.pref_correct_kanji), 0)+1);
+        }else{
+            editor.putInt(getString(R.string.pref_incorrect_kanji), pref.getInt(getString(R.string.pref_incorrect_kanji), 0)+1);
+        }
+        editor.commit();
+        showAnswerCounts();
+    }
+
+    public void showAnswerCounts(){
+        Integer correct = pref.getInt(getString(R.string.pref_correct_kanji), 0);
+        Integer incorrect = pref.getInt(getString(R.string.pref_incorrect_kanji), 0);
+        if(mCorrectCount!=null && mIncorrectCount!=null){
+            mCorrectCount.setText(correct.toString());
+            mIncorrectCount.setText(incorrect.toString());
+        }
     }
 
 }

@@ -1,5 +1,6 @@
 package com.jrmd.benkyoshimasu.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jrmd.benkyoshimasu.R;
@@ -39,7 +41,7 @@ import java.util.Random;
 public class VocabularyFragment extends Fragment{
 
     View rootView;
-    private TextView mMainWord,mKanji,mCorrectAnswer;
+    private TextView mMainWord,mKanji,mCorrectAnswer,mCorrectCount,mIncorrectCount;;
     private GridView mOptionGrid;
     private Word mainWord;
     private List<Word> options;
@@ -48,13 +50,13 @@ public class VocabularyFragment extends Fragment{
     private List<Integer>activeLessons;
     private Boolean japanese;
     private LessonsWords lessonsWords;
-    /*Button mOption1,mOption2,mOption3,mOption4;
-    List<Button> buttons;*/
+    SharedPreferences pref;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        pref=getActivity().getPreferences(Context.MODE_PRIVATE);
     }
 
     @Nullable
@@ -130,7 +132,12 @@ public class VocabularyFragment extends Fragment{
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.main_answers, menu);
+        LinearLayout itemC =(LinearLayout) menu.findItem(R.id.action_correct_answers).getActionView();
+        LinearLayout itemW =(LinearLayout) menu.findItem(R.id.action_wrong_answer).getActionView();
+        mCorrectCount = (TextView) itemC.findViewById(R.id.correct_answer_count);
+        mIncorrectCount = (TextView) itemW.findViewById(R.id.wrong_answer_count);
+        showAnswerCounts();
     }
 
     @Override
@@ -160,6 +167,7 @@ public class VocabularyFragment extends Fragment{
                 }else{
                     result= mainWord.getJapanese().equals(options.get(i).getJapanese());
                 }
+                updateAnswerCount(result);
                 Integer delayTime=1000;
                 if(result){
                     v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myGreen));
@@ -216,5 +224,26 @@ public class VocabularyFragment extends Fragment{
         mCorrectAnswer.setText(text);
 
     }
+
+    public void updateAnswerCount(Boolean result){
+        SharedPreferences.Editor editor = pref.edit();
+        if(result){
+            editor.putInt(getString(R.string.pref_correct_word), pref.getInt(getString(R.string.pref_correct_word), 0)+1);
+        }else{
+            editor.putInt(getString(R.string.pref_incorrect_word), pref.getInt(getString(R.string.pref_incorrect_word), 0)+1);
+        }
+        editor.commit();
+        showAnswerCounts();
+    }
+
+    public void showAnswerCounts(){
+        Integer correct = pref.getInt(getString(R.string.pref_correct_word), 0);
+        Integer incorrect = pref.getInt(getString(R.string.pref_incorrect_word), 0);
+        if(mCorrectCount!=null && mIncorrectCount!=null){
+            mCorrectCount.setText(correct.toString());
+            mIncorrectCount.setText(incorrect.toString());
+        }
+    }
+
 
 }

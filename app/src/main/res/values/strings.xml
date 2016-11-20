@@ -22,4 +22,9 @@
     <string name="lesson_5_key">lesson_5_key</string>
     <string name="lesson_6_key">lesson_6_key</string>
 
+    <string name="pref_correct_kanji">pref_correct_kanji</string>
+    <string name="pref_incorrect_kanji">pref_incorrect_kanji</string>
+    <string name="pref_correct_word">pref_correct_word</string>
+    <string name="pref_incorrect_word">pref_incorrect_word</string>
+
 </resources>

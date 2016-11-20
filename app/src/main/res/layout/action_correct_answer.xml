@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_item"
+    android:padding="@dimen/dim_2pd"
+    android:layout_marginLeft="@dimen/dim_2pd"
+    android:layout_marginRight="@dimen/dim_2pd">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:src="@drawable/ic_correct_24dp"/>
+    <TextView
+        android:id="@+id/correct_answer_count"
+        android:text="0"
+        android:layout_width="0dp"
+        android:textColor="@color/white"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+</LinearLayout>
