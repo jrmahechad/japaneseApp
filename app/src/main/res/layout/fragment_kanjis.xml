@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dim_8pd"
+        android:background="@drawable/border_main">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="30"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/correct_answer_kanji"
+                android:text="Correct Answer"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/myGreen"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meaning"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="30"
+                android:id="@+id/kanjis_meaning"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                />
+            <GridView
+                android:layout_marginLeft="@dimen/dim_8pd"
+                android:layout_marginRight="@dimen/dim_8pd"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="40"
+                android:id="@+id/kanjis_readings_grid"
+                android:numColumns="auto_fit"
+                android:horizontalSpacing="@dimen/dim_4pd"
+                android:verticalSpacing="@dimen/dim_4pd">
+
+            </GridView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dim_4pd"
+            android:paddingRight="@dimen/dim_4pd">
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/kanjis_options_grid"
+                android:numColumns="4"
+
+                android:horizontalSpacing="@dimen/dim_4pd"
+                android:verticalSpacing="@dimen/dim_4pd">
+
+            </GridView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

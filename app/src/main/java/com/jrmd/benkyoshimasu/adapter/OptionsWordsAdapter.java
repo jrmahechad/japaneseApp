@@ -18,7 +18,7 @@ import java.util.List;
  * Created by julian on 06/11/2016.
  */
 
-public class OptionsAdapter extends BaseAdapter {
+public class OptionsWordsAdapter extends BaseAdapter {
 
     Context context;
     List<Word> options;
@@ -26,7 +26,7 @@ public class OptionsAdapter extends BaseAdapter {
 
 
 
-    public OptionsAdapter(Context context, List<Word> options, Boolean japanese) {
+    public OptionsWordsAdapter(Context context, List<Word> options, Boolean japanese) {
         this.context = context;
         this.options = options;
         this.japanese=japanese;
@@ -52,7 +52,7 @@ public class OptionsAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         if(convertView==null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.word_option, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.word_option_item, parent, false);
         }else{
 
         }

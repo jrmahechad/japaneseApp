@@ -23,9 +23,10 @@ import android.widget.TextView;
 import com.jrmd.benkyoshimasu.R;
 import com.jrmd.benkyoshimasu.Utils;
 import com.jrmd.benkyoshimasu.activity.SettingsActivity;
-import com.jrmd.benkyoshimasu.adapter.OptionsWordsAdapter;
-import com.jrmd.benkyoshimasu.object.LessonsWords;
-import com.jrmd.benkyoshimasu.object.Word;
+import com.jrmd.benkyoshimasu.adapter.OptionsKanjisAdapter;
+import com.jrmd.benkyoshimasu.adapter.ReadingsKanjisAdapter;
+import com.jrmd.benkyoshimasu.object.Kanji;
+import com.jrmd.benkyoshimasu.object.LessonsKanjis;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,20 +37,18 @@ import java.util.Random;
  * Created by julian on 13/11/2016.
  */
 
-public class VocabularyFragment extends Fragment{
+public class KanjisFragment extends Fragment{
 
     View rootView;
-    private TextView mMainWord,mKanji,mCorrectAnswer;
-    private GridView mOptionGrid;
-    private Word mainWord;
-    private List<Word> options;
-    private List<Word> words;
+    private TextView mMeaning,mCorrectAnswer;
+    private GridView mOptionGrid,mReadingsGrid;
+    private Kanji mainKanji;
+    private List<Kanji> options;
+    private List<Kanji> kanjis;
     private Random randomGenerator;
     private List<Integer>activeLessons;
-    private Boolean japanese;
-    private LessonsWords lessonsWords;
-    /*Button mOption1,mOption2,mOption3,mOption4;
-    List<Button> buttons;*/
+    private LessonsKanjis lessonsKanjis;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,12 +59,12 @@ public class VocabularyFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_vocabulary, container, false);
+        rootView = inflater.inflate(R.layout.fragment_kanjis, container, false);
         randomGenerator = new Random();
-        mMainWord = (TextView) rootView.findViewById(R.id.main_word);
-        mKanji = (TextView) rootView.findViewById(R.id.kanji);
-        mCorrectAnswer = (TextView) rootView.findViewById(R.id.correct_answer_word);
-        mOptionGrid = (GridView) rootView.findViewById(R.id.options_grid);
+        mMeaning = (TextView) rootView.findViewById(R.id.kanjis_meaning);
+        mCorrectAnswer = (TextView) rootView.findViewById(R.id.correct_answer_kanji);
+        mOptionGrid = (GridView) rootView.findViewById(R.id.kanjis_options_grid);
+        mReadingsGrid = (GridView) rootView.findViewById(R.id.kanjis_readings_grid);
 
         return rootView;
     }
@@ -73,7 +72,7 @@ public class VocabularyFragment extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        lessonsWords = Utils.loadAllWords();
+        lessonsKanjis = Utils.loadAllKanjis();
         refreshData();
     }
 
@@ -100,26 +99,26 @@ public class VocabularyFragment extends Fragment{
                     .make(rootView,getString(R.string.warning_no_lesson), Snackbar.LENGTH_LONG);
             snackbar.show();
         }
-        words= new ArrayList<Word>();
+        kanjis= new ArrayList<Kanji>();
         for(Integer lesson :activeLessons){
             switch (lesson){
                 case 1:
-                    words.addAll(lessonsWords.getWordsLesson1());
+                    kanjis.addAll(lessonsKanjis.getKanjisLesson1());
                     break;
                 case 2:
-                    words.addAll(lessonsWords.getWordsLesson2());
+                    kanjis.addAll(lessonsKanjis.getKanjisLesson2());
                     break;
                 case 3:
-                    words.addAll(lessonsWords.getWordsLesson3());
+                    kanjis.addAll(lessonsKanjis.getKanjisLesson3());
                     break;
                 case 4:
-                    words.addAll(lessonsWords.getWordsLesson4());
+                    kanjis.addAll(lessonsKanjis.getKanjisLesson4());
                     break;
                 case 5:
-                    words.addAll(lessonsWords.getWordsLesson5());
+                    kanjis.addAll(lessonsKanjis.getKanjisLesson5());
                     break;
                 case 6:
-                    words.addAll(lessonsWords.getWordsLesson6());
+                    kanjis.addAll(lessonsKanjis.getKanjisLesson6());
                     break;
                 default:
                     break;
@@ -145,28 +144,26 @@ public class VocabularyFragment extends Fragment{
 
     public  void refreshData(){
         loadLesson();
-        japanese= selectMainWord();
-        OptionsWordsAdapter adapter = new OptionsWordsAdapter(getActivity(),options,japanese);
+        selectMainKanji();
+        ReadingsKanjisAdapter adapterReadings = new ReadingsKanjisAdapter(getActivity(),mainKanji.getReadings());
+        mReadingsGrid.setAdapter(adapterReadings);
+        OptionsKanjisAdapter adapter = new OptionsKanjisAdapter(getActivity(),options);
         mOptionGrid.setAdapter(adapter);
         mOptionGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View v, int i, long l) {
                 mOptionGrid.setEnabled(false);
-                TextView optionTextClicked = (TextView) v.findViewById(R.id.word_option_text);
+                TextView optionTextClicked = (TextView) v.findViewById(R.id.kanji_option_text);
 
-                Boolean result=false;
-                if(japanese){
-                    result= mainWord.getSpanish().equals(options.get(i).getSpanish());
-                }else{
-                    result= mainWord.getJapanese().equals(options.get(i).getJapanese());
-                }
+                Boolean result=mainKanji.getMeaning().equals(options.get(i).getMeaning());
+
                 Integer delayTime=1000;
                 if(result){
                     v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myGreen));
                     optionTextClicked.setTextColor(Color.WHITE);
 
                 }else {
-                    highlightCorrect(japanese);
+                    highlightCorrect();
                     v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myRed));
                     optionTextClicked.setTextColor(Color.WHITE);
                     delayTime=2000;
@@ -184,35 +181,41 @@ public class VocabularyFragment extends Fragment{
         mOptionGrid.setEnabled(true);
     }
 
-    private Boolean selectMainWord(){
+    private void selectMainKanji(){
         mCorrectAnswer.setText("");
-        Integer mainPosition=randomGenerator.nextInt(words.size());
-        mainWord=words.get(mainPosition);
-        List<Word> wordsCopy=new ArrayList<Word>(words);
-        options = new ArrayList<Word>();
-        wordsCopy.remove(mainPosition);
+        Integer mainPosition=randomGenerator.nextInt(kanjis.size());
+        mainKanji=kanjis.get(mainPosition);
+        List<Kanji> kanjisCopy=new ArrayList<Kanji>(kanjis);
+        options = new ArrayList<Kanji>();
+        kanjisCopy.remove(mainPosition);
         Integer count=0;
-        while(count<3){
-            Integer wrongOptionPosition= randomGenerator.nextInt(wordsCopy.size());
-            if(!options.contains(wordsCopy.get(wrongOptionPosition))){
-                options.add(wordsCopy.get(wrongOptionPosition));
-                wordsCopy.remove(wrongOptionPosition);
+        while(count<7){
+            Integer wrongOptionPosition= randomGenerator.nextInt(kanjisCopy.size());
+            if(!options.contains(kanjisCopy.get(wrongOptionPosition))){
+                options.add(kanjisCopy.get(wrongOptionPosition));
+                kanjisCopy.remove(wrongOptionPosition);
                 count++;
             }
         }
 
-        options.add(randomGenerator.nextInt(options.size()),mainWord);
+        options.add(randomGenerator.nextInt(options.size()),mainKanji);
+        mMeaning.setVisibility(View.INVISIBLE);
+        mReadingsGrid.setVisibility(View.INVISIBLE);
+        Integer showMeaning =randomGenerator.nextInt(100);
+        if(showMeaning<20){
+            mMeaning.setVisibility(View.VISIBLE);
+            mReadingsGrid.setVisibility(View.VISIBLE);
+        }else if(showMeaning<60){
+            mMeaning.setVisibility(View.VISIBLE);
+        }else{
+            mReadingsGrid.setVisibility(View.VISIBLE);
+        }
+        mMeaning.setText(mainKanji.getMeaning());
 
-        Boolean japanese =randomGenerator.nextInt(100)<50;
-        String textMain= japanese?mainWord.getJapanese():mainWord.getSpanish();
-        String kanji=japanese?mainWord.getKanji():"";
-        mMainWord.setText(textMain);
-        mKanji.setText(kanji);
-        return japanese;
     }
 
-    public void highlightCorrect(Boolean japanese){
-        String text = japanese?mainWord.getSpanish():mainWord.getJapanese();
+    public void highlightCorrect(){
+        String text = mainKanji.getKanji();
         mCorrectAnswer.setText(text);
 
     }

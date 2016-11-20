@@ -6,5 +6,8 @@
     <color name="myGreen">#228b22</color>
     <color name="myRed">#8b0000</color>
     <color name="clickedGrey">#d3d3d3</color>
+    <color name="colorKun">#0D47A1</color>
+    <color name="colorNoKun">#2962FF</color>
+    <color name="white">#fff</color>
 
 </resources>

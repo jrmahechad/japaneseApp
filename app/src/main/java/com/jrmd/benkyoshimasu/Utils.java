@@ -3,7 +3,10 @@ package com.jrmd.benkyoshimasu;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
-import com.jrmd.benkyoshimasu.object.Lessons;
+import com.jrmd.benkyoshimasu.object.Kanji;
+import com.jrmd.benkyoshimasu.object.LessonsKanjis;
+import com.jrmd.benkyoshimasu.object.LessonsWords;
+import com.jrmd.benkyoshimasu.object.Reading;
 import com.jrmd.benkyoshimasu.object.Word;
 
 import java.util.ArrayList;
@@ -15,8 +18,8 @@ import java.util.List;
 
 public class Utils {
 
-    public static Lessons loadAllWords(){
-        Lessons lessons = new Lessons();
+    public static LessonsWords loadAllWords(){
+        LessonsWords lessons = new LessonsWords();
         List<Word> words1 = new ArrayList<Word>();
         List<Word> words2 = new ArrayList<Word>();
         List<Word> words3 = new ArrayList<Word>();
@@ -228,4 +231,123 @@ public class Utils {
         int px = Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
         return px;
     }
+
+    public static LessonsKanjis loadAllKanjis() {
+        LessonsKanjis lessons= new LessonsKanjis();
+        List<Kanji> kanjis1=new ArrayList<Kanji>();
+        List<Kanji> kanjis2=new ArrayList<Kanji>();
+        List<Kanji> kanjis3=new ArrayList<Kanji>();
+        List<Kanji> kanjis4=new ArrayList<Kanji>();
+        List<Kanji> kanjis5=new ArrayList<Kanji>();
+        List<Kanji> kanjis6=new ArrayList<Kanji>();
+
+        List<Reading> readings = new ArrayList<Reading>();
+        readings.add(new Reading("ひ",true));
+        readings.add(new Reading("び",true));
+        readings.add(new Reading("か",true));
+        readings.add(new Reading("ニチ",false));
+        readings.add(new Reading("ニ",false));
+        kanjis1.add(new Kanji("日","Sol", readings,5));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("つき",true));
+        readings.add(new Reading("ゲツ",false));
+        kanjis1.add(new Kanji("月","Luna", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("き",true));
+        readings.add(new Reading("モク",false));
+        readings.add(new Reading("ボク",false));
+        kanjis1.add(new Kanji("木","Arbol", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("やま",true));
+        readings.add(new Reading("サン",false));
+        readings.add(new Reading("ザン",false));
+        kanjis1.add(new Kanji("山","Montaña", readings,3));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("かわ",true));
+        readings.add(new Reading("がわ",true));
+        readings.add(new Reading("セイ",false));
+        kanjis1.add(new Kanji("川","Rio", readings,3));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("た",true));
+        readings.add(new Reading("だ",true));
+        readings.add(new Reading("デン",false));
+        kanjis1.add(new Kanji("田","Arrozal", readings,5));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("ひと",true));
+        readings.add(new Reading("ジン",false));
+        readings.add(new Reading("ニン",false));
+        kanjis1.add(new Kanji("人","Persona", readings,2));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("くち",true));
+        readings.add(new Reading("ぐち",true));
+        readings.add(new Reading("コウ",false));
+        kanjis1.add(new Kanji("口","Boca", readings,3));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("くるま",true));
+        readings.add(new Reading("シャ",true));
+        kanjis1.add(new Kanji("車","Carro", readings,7));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("かど",true));
+        readings.add(new Reading("モン",false));
+        kanjis1.add(new Kanji("門","Entrada", readings,8));
+        readings = new ArrayList<Reading>();
+
+        /*readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        kanjis1.add(new Kanji("","", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        kanjis1.add(new Kanji("","", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        kanjis1.add(new Kanji("","", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        kanjis1.add(new Kanji("","", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        kanjis1.add(new Kanji("","", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        readings.add(new Reading("",true));
+        kanjis1.add(new Kanji("","", readings,4));
+        readings = new ArrayList<Reading>();*/
+
+
+        lessons.setKanjisLesson1(kanjis1);
+        lessons.setKanjisLesson2(kanjis2);
+        lessons.setKanjisLesson3(kanjis3);
+        lessons.setKanjisLesson4(kanjis4);
+        lessons.setKanjisLesson5(kanjis5);
+        lessons.setKanjisLesson6(kanjis6);
+
+        return lessons;
+
+    }
+
+
 }

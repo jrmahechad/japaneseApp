@@ -6,7 +6,7 @@ import java.util.List;
  * Created by julian on 14/11/2016.
  */
 
-public class Lessons {
+public class LessonsWords {
 
     public List<Word> wordsLesson1;
     public List<Word> wordsLesson2;
