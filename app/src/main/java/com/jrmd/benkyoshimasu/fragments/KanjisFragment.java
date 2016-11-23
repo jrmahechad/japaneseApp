@@ -193,14 +193,14 @@ public class KanjisFragment extends Fragment{
 
     private void selectMainKanji(){
         mCorrectAnswer.setText("");
-        Integer mainPosition=randomGenerator.nextInt(kanjis.size());
+        int mainPosition=randomGenerator.nextInt(kanjis.size());
         mainKanji=kanjis.get(mainPosition);
         List<Kanji> kanjisCopy=new ArrayList<Kanji>(kanjis);
         options = new ArrayList<Kanji>();
         kanjisCopy.remove(mainPosition);
         Integer count=0;
         while(count<7){
-            Integer wrongOptionPosition= randomGenerator.nextInt(kanjisCopy.size());
+            int wrongOptionPosition= randomGenerator.nextInt(kanjisCopy.size());
             if(!options.contains(kanjisCopy.get(wrongOptionPosition))){
                 options.add(kanjisCopy.get(wrongOptionPosition));
                 kanjisCopy.remove(wrongOptionPosition);

@@ -194,14 +194,14 @@ public class VocabularyFragment extends Fragment{
 
     private Boolean selectMainWord(){
         mCorrectAnswer.setText("");
-        Integer mainPosition=randomGenerator.nextInt(words.size());
+        int mainPosition=randomGenerator.nextInt(words.size());
         mainWord=words.get(mainPosition);
         List<Word> wordsCopy=new ArrayList<Word>(words);
         options = new ArrayList<Word>();
         wordsCopy.remove(mainPosition);
         Integer count=0;
         while(count<3){
-            Integer wrongOptionPosition= randomGenerator.nextInt(wordsCopy.size());
+            int wrongOptionPosition= randomGenerator.nextInt(wordsCopy.size());
             if(!options.contains(wordsCopy.get(wrongOptionPosition))){
                 options.add(wordsCopy.get(wrongOptionPosition));
                 wordsCopy.remove(wrongOptionPosition);
