@@ -24,6 +24,7 @@ import android.widget.TextView;
 
 import com.jrmd.benkyoshimasu.R;
 import com.jrmd.benkyoshimasu.Utils;
+import com.jrmd.benkyoshimasu.activity.ListActivity;
 import com.jrmd.benkyoshimasu.activity.SettingsActivity;
 import com.jrmd.benkyoshimasu.adapter.OptionsWordsAdapter;
 import com.jrmd.benkyoshimasu.object.LessonsWords;
@@ -147,11 +148,19 @@ public class VocabularyFragment extends Fragment{
             startActivity(new Intent(getActivity(), SettingsActivity.class));
             return true;
         }
+        if(id == R.id.action_list){
+            startActivity(new Intent(getActivity(), ListActivity.class));
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
     public  void refreshData(){
         loadLesson();
+        if(words.size()==0){
+            Snackbar
+                    .make(rootView,getString(R.string.warning_no_vocabulary), Snackbar.LENGTH_LONG).show();
+        }
         japanese= selectMainWord();
         OptionsWordsAdapter adapter = new OptionsWordsAdapter(getActivity(),options,japanese);
         mOptionGrid.setAdapter(adapter);

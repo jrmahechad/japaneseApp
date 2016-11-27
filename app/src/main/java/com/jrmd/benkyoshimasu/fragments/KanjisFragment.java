@@ -24,6 +24,7 @@ import android.widget.TextView;
 
 import com.jrmd.benkyoshimasu.R;
 import com.jrmd.benkyoshimasu.Utils;
+import com.jrmd.benkyoshimasu.activity.ListActivity;
 import com.jrmd.benkyoshimasu.activity.SettingsActivity;
 import com.jrmd.benkyoshimasu.adapter.OptionsKanjisAdapter;
 import com.jrmd.benkyoshimasu.adapter.ReadingsKanjisAdapter;
@@ -148,11 +149,20 @@ public class KanjisFragment extends Fragment{
             startActivity(new Intent(getActivity(), SettingsActivity.class));
             return true;
         }
+        if(id == R.id.action_list){
+            startActivity(new Intent(getActivity(), ListActivity.class));
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
     public  void refreshData(){
         loadLesson();
+        if(kanjis.size()==0){
+            Snackbar
+                    .make(rootView,getString(R.string.warning_no_kanjis), Snackbar.LENGTH_LONG).show();
+            return;
+        }
         selectMainKanji();
         ReadingsKanjisAdapter adapterReadings = new ReadingsKanjisAdapter(getActivity(),mainKanji.getReadings());
         mReadingsGrid.setAdapter(adapterReadings);
@@ -193,6 +203,7 @@ public class KanjisFragment extends Fragment{
 
     private void selectMainKanji(){
         mCorrectAnswer.setText("");
+
         int mainPosition=randomGenerator.nextInt(kanjis.size());
         mainKanji=kanjis.get(mainPosition);
         List<Kanji> kanjisCopy=new ArrayList<Kanji>(kanjis);

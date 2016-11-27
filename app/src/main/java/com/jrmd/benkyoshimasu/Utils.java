@@ -419,7 +419,6 @@ public class Utils {
         kanjis3.add(new Kanji("千","Mil", readings,3));
         readings = new ArrayList<Reading>();
 
-        readings.add(new Reading("",true));
         readings.add(new Reading("マン",false));
         readings.add(new Reading("バン",false));
         kanjis3.add(new Kanji("万","Diez Mil", readings,3));
