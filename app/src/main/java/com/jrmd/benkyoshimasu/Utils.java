@@ -158,7 +158,7 @@ public class Utils {
         words5.add(new Word("Este año","ことし","",5));
         words5.add(new Word("El proximo año","らいねん","",5));
         words5.add(new Word("Primer día del mes","ついたち","１日",5));
-        words5.add(new Word("2do día del mes","ふつか","２日",5));
+        words5.add(new Word("2do día del mes","ふっか","２日",5));
         words5.add(new Word("3er día del mes","みっか","３日",5));
         words5.add(new Word("4to día del mes","よっか","４日",5));
         words5.add(new Word("5to día del mes","いつか","５日",5));
@@ -166,7 +166,7 @@ public class Utils {
         words5.add(new Word("7to día del mes","なのか","７日",5));
         words5.add(new Word("8to día del mes","ようか","８日",5));
         words5.add(new Word("9to día del mes","ここのか","９日",5));
-        words5.add(new Word("10mo día del mes","よおか","１０日",5));
+        words5.add(new Word("10mo día del mes","とおか","１０日",5));
         words5.add(new Word("14vo día del mes","じゅうよっか","１４日",5));
         words5.add(new Word("20vo día del mes","はつか","２０日",5));
         words5.add(new Word("24vo día del mes","にじゅうよっか","２４日",5));
