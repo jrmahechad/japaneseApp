@@ -48,10 +48,12 @@ public class KanjisFragment extends Fragment{
     private Kanji mainKanji;
     private List<Kanji> options;
     private List<Kanji> kanjis;
+    private List<Kanji> lastMainKanjis;
     private Random randomGenerator;
     private List<Integer>activeLessons;
     private LessonsKanjis lessonsKanjis;
     SharedPreferences pref;
+    private int MAX_LAST_MAIN_KANJI=5;
 
 
     @Override
@@ -70,7 +72,7 @@ public class KanjisFragment extends Fragment{
         mCorrectAnswer = (TextView) rootView.findViewById(R.id.correct_answer_kanji);
         mOptionGrid = (GridView) rootView.findViewById(R.id.kanjis_options_grid);
         mReadingsGrid = (GridView) rootView.findViewById(R.id.kanjis_readings_grid);
-
+        lastMainKanjis= new ArrayList<Kanji>();
         return rootView;
     }
 
@@ -204,8 +206,20 @@ public class KanjisFragment extends Fragment{
     private void selectMainKanji(){
         mCorrectAnswer.setText("");
 
-        int mainPosition=randomGenerator.nextInt(kanjis.size());
-        mainKanji=kanjis.get(mainPosition);
+        int mainPosition;
+
+        boolean mainKanjiSelected=false;
+        do{
+            mainPosition=randomGenerator.nextInt(kanjis.size());
+            mainKanji=kanjis.get(mainPosition);
+            if(!lastMainKanjis.contains(mainKanji)){
+                lastMainKanjis.add(mainKanji);
+                mainKanjiSelected=true;
+                if(lastMainKanjis.size()==MAX_LAST_MAIN_KANJI){
+                    lastMainKanjis.remove(0);
+                }
+            }
+        }while(!mainKanjiSelected);
         List<Kanji> kanjisCopy=new ArrayList<Kanji>(kanjis);
         options = new ArrayList<Kanji>();
         kanjisCopy.remove(mainPosition);

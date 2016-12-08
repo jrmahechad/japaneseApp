@@ -128,6 +128,7 @@ public class Utils {
         words4.add(new Word("Qué Número","なんばん","",4));
         words4.add(new Word("Desde -"," - から","",4));
         words4.add(new Word("Hasta -"," - まで","",4));
+
         words5.add(new Word("Ir","いきます","",5));
         words5.add(new Word("Venir","きます","",5));
         words5.add(new Word("Volver","かえります","",5));
@@ -148,9 +149,9 @@ public class Utils {
         words5.add(new Word("Novia","かのじょ","",5));
         words5.add(new Word("Familia","かぞく","",5));
         words5.add(new Word("Solo/a","ひとりで","",5));
-        words5.add(new Word("La semana pasada","せんしょう","",5));
-        words5.add(new Word("Esta Semana","こんしょう","",5));
-        words5.add(new Word("La próxima semana","らいしょう","",5));
+        words5.add(new Word("La semana pasada","せんしゅう","",5));
+        words5.add(new Word("Esta Semana","こんしゅう","",5));
+        words5.add(new Word("La próxima semana","らいしゅう","",5));
         words5.add(new Word("El mes pasado","せんげつ","先月",5));
         words5.add(new Word("Este mes","こんげつ","",5));
         words5.add(new Word("El próximo mes","らいげつ","",5));

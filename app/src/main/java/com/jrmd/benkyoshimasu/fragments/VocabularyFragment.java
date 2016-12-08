@@ -47,11 +47,13 @@ public class VocabularyFragment extends Fragment{
     private Word mainWord;
     private List<Word> options;
     private List<Word> words;
+    private List<Word> lastMainWords;
     private Random randomGenerator;
     private List<Integer>activeLessons;
     private Boolean japanese;
     private LessonsWords lessonsWords;
     SharedPreferences pref;
+    private int MAX_LAST_MAIN_WORDS=5;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class VocabularyFragment extends Fragment{
         mKanji = (TextView) rootView.findViewById(R.id.kanji);
         mCorrectAnswer = (TextView) rootView.findViewById(R.id.correct_answer_word);
         mOptionGrid = (GridView) rootView.findViewById(R.id.options_grid);
+        lastMainWords = new ArrayList<Word>();
 
         return rootView;
     }
@@ -203,8 +206,19 @@ public class VocabularyFragment extends Fragment{
 
     private Boolean selectMainWord(){
         mCorrectAnswer.setText("");
-        int mainPosition=randomGenerator.nextInt(words.size());
-        mainWord=words.get(mainPosition);
+        int mainPosition;
+        boolean mainWordSelected=false;
+        do{
+            mainPosition=randomGenerator.nextInt(words.size());
+            mainWord=words.get(mainPosition);
+           if(!lastMainWords.contains(mainWord)){
+               lastMainWords.add(mainWord);
+               mainWordSelected=true;
+               if(lastMainWords.size()==MAX_LAST_MAIN_WORDS){
+                   lastMainWords.remove(0);
+               }
+           }
+        }while(!mainWordSelected);
         List<Word> wordsCopy=new ArrayList<Word>(words);
         options = new ArrayList<Word>();
         wordsCopy.remove(mainPosition);
