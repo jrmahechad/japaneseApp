@@ -48,7 +48,16 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="20"
-            ></LinearLayout>
+            >
+            <Button
+                android:text="@string/advance_vocabulary"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/welcome_advance_vocabulary_button"
+                android:layout_margin="@dimen/dim_2pd"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector"/>
+        </LinearLayout>
     </LinearLayout>
 
 

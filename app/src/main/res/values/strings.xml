@@ -3,6 +3,7 @@
     <string name="action_settings">Configuración</string>
     <string name="max_lesson">Ultima Lección</string>
     <string name="vocabulary">Vocabulario</string>
+    <string name="advance_vocabulary">Vocabulario Avanzado</string>
     <string name="title_activity_settings">Configuración</string>
     <string name="kanjis">Kanjis</string>
     <string name="warning_no_lesson">No tiene lecciones seleccionadas, se selecciono la lección 1</string>
@@ -28,5 +29,7 @@
     <string name="pref_incorrect_kanji">pref_incorrect_kanji</string>
     <string name="pref_correct_word">pref_correct_word</string>
     <string name="pref_incorrect_word">pref_incorrect_word</string>
+    <string name="pref_correct_adv_word">pref_correct_word</string>
+    <string name="pref_incorrect_adv_word">pref_incorrect_word</string>
 
 </resources>

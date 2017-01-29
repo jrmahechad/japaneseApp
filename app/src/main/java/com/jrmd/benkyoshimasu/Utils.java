@@ -429,6 +429,11 @@ public class Utils {
         kanjis3.add(new Kanji("円","Yen", readings,4));
         readings = new ArrayList<Reading>();
 
+        readings.add(new Reading("とし",false));
+        readings.add(new Reading("ネン",false));
+        kanjis3.add(new Kanji("年","Año", readings,4));
+        readings = new ArrayList<Reading>();
+
         readings.add(new Reading("うえ",true));
         readings.add(new Reading("ジョウ",false));
         kanjis4.add(new Kanji("上","Arriba", readings,3));
@@ -487,10 +492,64 @@ public class Utils {
         kanjis4.add(new Kanji("何","Qué?", readings,7));
         readings = new ArrayList<Reading>();
 
+        readings.add(new Reading("あかるい",true));
+        readings.add(new Reading("あける",true));
+        readings.add(new Reading("メイ",false));
+        kanjis5.add(new Kanji("明","Brillante", readings,8));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("やすみ",true));
+        readings.add(new Reading("キュウ",false));
+        kanjis5.add(new Kanji("休","Descansar", readings,6));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("からだ",true));
+        readings.add(new Reading("タイ",false));
+        kanjis5.add(new Kanji("体","Cuerpo", readings,7));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("すきな",true));
+        readings.add(new Reading("すく",true));
+        readings.add(new Reading("コウ",false));
+        kanjis5.add(new Kanji("好きな","Amor, Gustar", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("おとこ",true));
+        readings.add(new Reading("ダイ",false));
+        readings.add(new Reading("ナン",false));
+        kanjis5.add(new Kanji("男","Hombre", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("はやし",true));
+        readings.add(new Reading("リン",false));
+        kanjis5.add(new Kanji("林","Madera, Huerto", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("もり",true));
+        readings.add(new Reading("シン",false));
+        kanjis5.add(new Kanji("森","Bosque, Selva", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("あいだ",true));
+        readings.add(new Reading("ま",true));
+        readings.add(new Reading("カン",false));
+        kanjis5.add(new Kanji("間","Entre", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("はたけ",true));
+        readings.add(new Reading("はた",true));
+        kanjis5.add(new Kanji("畑","Campo cultivado", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("いわ",true));
+        readings.add(new Reading("ガン",false));
+        kanjis5.add(new Kanji("岩","Roca", readings,4));
+        readings = new ArrayList<Reading>();
+
         /*readings.add(new Reading("",true));
         readings.add(new Reading("",true));
         readings.add(new Reading("",true));
-        kanjis4.add(new Kanji("","", readings,4));
+        kanjis5.add(new Kanji("","", readings,4));
         readings = new ArrayList<Reading>();*/
 
 
@@ -504,6 +563,86 @@ public class Utils {
 
         return lessons;
 
+    }
+
+
+    public static LessonsWords loadAllAdvanceLessonWords(){
+        LessonsWords lessons = new LessonsWords();
+        List<Word> words1 = new ArrayList<Word>();
+        List<Word> words2 = new ArrayList<Word>();
+        List<Word> words3 = new ArrayList<Word>();
+        List<Word> words4 = new ArrayList<Word>();
+        List<Word> words5 = new ArrayList<Word>();
+        List<Word> words6 = new ArrayList<Word>();
+
+        words1.add(new Word("Japon","にほん","日本",1));
+        words1.add(new Word("Volcan","かざん","火山",1));
+        words1.add(new Word("Entrada","いりぐち","入口",1));
+        words1.add(new Word("Salida","でぐち","出口",1));
+        words1.add(new Word("Poblacion","じんこう","人口",1));
+        words1.add(new Word("Tren","でんしゃ","電車",1));
+        words1.add(new Word("Automovil","じどうしゃ","",1));
+        words1.add(new Word("Especialidad","せんもん","専門",1));
+
+        words2.add(new Word("Campo de arroz","すいでん","水田",2));
+        words2.add(new Word("Dinero","おかね","お金",2));
+        words2.add(new Word("Ingenieria Civil","どぼく","土木",2));
+        words2.add(new Word("Niña Estudiante","","",2));
+        words2.add(new Word("Mujer","おんなのひと","女の人",2));
+        words2.add(new Word("Universidad","だいがく","大学",2));
+        words2.add(new Word("Colegio","がっこう","学校",2));
+        words2.add(new Word("Vivir","いきる","生きる",2));
+        words2.add(new Word("Nacer","うまれる","生まれる",2));
+        words2.add(new Word("Profesor","せんせい","先生",2));
+        words2.add(new Word("Estudiante","がくせい","学生",2));
+        words2.add(new Word("Mes Anterior","せんげつ","先月",2));
+        words2.add(new Word("Privado","しりつ","私立",2));
+        words2.add(new Word("Universidad Privada","しりつだいがく","私立大学",2));
+
+        words3.add(new Word("Chiba","ちば","千葉",3));
+        words3.add(new Word("Todos los Paises","ぼんこく","万国",3));
+        words3.add(new Word("Yen","えん","円",3));
+        words3.add(new Word("Persona Mayor","としうえ","年上",3));
+        words3.add(new Word("Año Pasado","きょねん","去年",3));
+        words3.add(new Word("Proximo Año","らいねん","来年",3));
+
+        words4.add(new Word("Subir","のぼる","上る",4));
+        words4.add(new Word("Subir, escalar","あがる","上がる",4));
+        words4.add(new Word("Hábil","じょうずな","上手",4));
+        words4.add(new Word("Bajar","さがる","下がる",4));
+        words4.add(new Word("Persona joven","としした","年下",4));
+        words4.add(new Word("Bajarse","げしゃする","下車",4));
+        words4.add(new Word("Centro","ちゅうしん","中心",4));
+        words4.add(new Word("Todo el dia","いちにちじゅう","一日中",4));
+        words4.add(new Word("Grande","おおきい","大きい",4));
+        words4.add(new Word("Importante","たいせつな","大切な",4));
+        words4.add(new Word("Adulto","おとな","大人",4));
+        words4.add(new Word("Pequeño","ちいさい","小さい",4));
+        words4.add(new Word("Arroyo","おがわ","小川",4));
+        words4.add(new Word("Escuela Primaria","しょうがっこう","小学校",4));
+        words4.add(new Word("Niño","こども","小人",4));
+        words4.add(new Word("Este dia","ほんじつ","本日",4));
+        words4.add(new Word("Oficina principal","ほんてん","本店",4));
+        words4.add(new Word("Mitad","はんぶん","半分",4));
+        words4.add(new Word("Mitad del Año","はにょし","半年",4));
+        words4.add(new Word("Dividir","わける","分ける",4));
+        words4.add(new Word("Entender","わかる","分かる",4));
+        words4.add(new Word("Poder","ちから","力",4));
+        words4.add(new Word("Habilidad","じつりょく","実力",4));
+        words4.add(new Word("Dinamica","りきがく","力学",4));
+        words4.add(new Word("Cuantas personas?","なんにん","何人",4));
+        words4.add(new Word("Que año?","なんねん","何年",4));
+        words4.add(new Word("","","",4));
+
+        lessons.setWordsLesson1(words1);
+        lessons.setWordsLesson2(words2);
+        lessons.setWordsLesson3(words3);
+        lessons.setWordsLesson4(words4);
+        lessons.setWordsLesson5(words5);
+        lessons.setWordsLesson6(words6);
+
+
+        return lessons;
     }
 
 

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.jrmd.benkyoshimasu.R;
+import com.jrmd.benkyoshimasu.activity.AdvanceVocabularyActivity;
 import com.jrmd.benkyoshimasu.activity.KanjisActivity;
 import com.jrmd.benkyoshimasu.activity.ListActivity;
 import com.jrmd.benkyoshimasu.activity.SettingsActivity;
@@ -25,7 +26,7 @@ import com.jrmd.benkyoshimasu.activity.VocabularyActivity;
 public class WelcomeFragment extends Fragment implements View.OnClickListener{
 
     View rootView;
-    Button mVocabularyButton,KanjisButton;
+    Button mVocabularyButton, mKanjisButton,mAdvVocabularyButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,10 +40,12 @@ public class WelcomeFragment extends Fragment implements View.OnClickListener{
          rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
 
         mVocabularyButton= (Button)rootView.findViewById(R.id.welcome_vocabulary_button);
-        KanjisButton= (Button)rootView.findViewById(R.id.welcome_kanjis_button);
+        mKanjisButton = (Button)rootView.findViewById(R.id.welcome_kanjis_button);
+        mAdvVocabularyButton = (Button)rootView.findViewById(R.id.welcome_advance_vocabulary_button);
 
         mVocabularyButton.setOnClickListener(this);
-        KanjisButton.setOnClickListener(this);
+        mKanjisButton.setOnClickListener(this);
+        mAdvVocabularyButton.setOnClickListener(this);
 
         return rootView;
     }
@@ -57,6 +60,10 @@ public class WelcomeFragment extends Fragment implements View.OnClickListener{
             case R.id.welcome_kanjis_button:
                 Intent intentK= new Intent(getActivity(),KanjisActivity.class);
                 startActivity(intentK);
+                break;
+            case R.id.welcome_advance_vocabulary_button:
+                Intent intentAV= new Intent(getActivity(),AdvanceVocabularyActivity.class);
+                startActivity(intentAV);
                 break;
             default:
                 break;
