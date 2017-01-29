@@ -511,7 +511,7 @@ public class Utils {
         readings.add(new Reading("すきな",true));
         readings.add(new Reading("すく",true));
         readings.add(new Reading("コウ",false));
-        kanjis5.add(new Kanji("好きな","Amor, Gustar", readings,4));
+        kanjis5.add(new Kanji("好","Amor, Gustar", readings,4));
         readings = new ArrayList<Reading>();
 
         readings.add(new Reading("おとこ",true));
@@ -581,13 +581,12 @@ public class Utils {
         words1.add(new Word("Salida","でぐち","出口",1));
         words1.add(new Word("Poblacion","じんこう","人口",1));
         words1.add(new Word("Tren","でんしゃ","電車",1));
-        words1.add(new Word("Automovil","じどうしゃ","",1));
+        words1.add(new Word("Automovil","じどうしゃ","自動車",1));
         words1.add(new Word("Especialidad","せんもん","専門",1));
 
         words2.add(new Word("Campo de arroz","すいでん","水田",2));
         words2.add(new Word("Dinero","おかね","お金",2));
         words2.add(new Word("Ingenieria Civil","どぼく","土木",2));
-        words2.add(new Word("Niña Estudiante","","",2));
         words2.add(new Word("Mujer","おんなのひと","女の人",2));
         words2.add(new Word("Universidad","だいがく","大学",2));
         words2.add(new Word("Colegio","がっこう","学校",2));
@@ -632,7 +631,7 @@ public class Utils {
         words4.add(new Word("Dinamica","りきがく","力学",4));
         words4.add(new Word("Cuantas personas?","なんにん","何人",4));
         words4.add(new Word("Que año?","なんねん","何年",4));
-        words4.add(new Word("","","",4));
+
 
         lessons.setWordsLesson1(words1);
         lessons.setWordsLesson2(words2);

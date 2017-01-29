@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.jrmd.benkyoshimasu.R;
 import com.jrmd.benkyoshimasu.Utils;
+import com.jrmd.benkyoshimasu.adapter.AdvanceVocabularyListAdapter;
 import com.jrmd.benkyoshimasu.adapter.KanjisListAdapter;
 import com.jrmd.benkyoshimasu.adapter.WordsListAdapter;
 import com.jrmd.benkyoshimasu.object.Kanji;
@@ -28,8 +29,8 @@ import java.util.List;
 public class ListFragment extends Fragment {
 
     private View rootView;
-    private ListView listViewVocabulary,listViewKanjis;
-    private List<Word> words;
+    private ListView listViewVocabulary,listViewKanjis,listViewAdvanceVocabulary;
+    private List<Word> words,advanceWords;
     private List<Kanji> kanjis;
     private int from;
     private TabLayout tabLayout;
@@ -40,6 +41,7 @@ public class ListFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_list, container, false);
         listViewVocabulary = (ListView) rootView.findViewById(R.id.fragment_list_vocabulary);
         listViewKanjis = (ListView) rootView.findViewById(R.id.fragment_list_kanjis);
+        listViewAdvanceVocabulary = (ListView) rootView.findViewById(R.id.fragment_list_advance_vocabulary);
         tabLayout = (TabLayout) rootView.findViewById(R.id.list_tablayout);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -47,12 +49,16 @@ public class ListFragment extends Fragment {
             public void onTabSelected(TabLayout.Tab tab) {
                 listViewVocabulary.setVisibility(View.GONE);
                 listViewKanjis.setVisibility(View.GONE);
+                listViewAdvanceVocabulary.setVisibility(View.GONE);
                 switch (tab.getPosition()){
                     case 0:
                         listViewVocabulary.setVisibility(View.VISIBLE);
                         break;
                     case 1:
                         listViewKanjis.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        listViewAdvanceVocabulary.setVisibility(View.VISIBLE);
                         break;
                     default:
                         break;
@@ -107,6 +113,25 @@ public class ListFragment extends Fragment {
 
         KanjisListAdapter kanjisAdapter = new KanjisListAdapter(getActivity(),kanjis);
         listViewKanjis.setAdapter(kanjisAdapter);
+
+        LessonsWords lessonsAdvanceWords = Utils.loadAllAdvanceLessonWords();
+
+        advanceWords= new ArrayList<Word>();
+        advanceWords.add(new Word("Lección 1","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson1());
+        advanceWords.add(new Word("Lección 2","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson2());
+        advanceWords.add(new Word("Lección 3","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson3());
+        advanceWords.add(new Word("Lección 4","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson4());
+        advanceWords.add(new Word("Lección 5","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson5());
+        advanceWords.add(new Word("Lección 6","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson6());
+
+        AdvanceVocabularyListAdapter advanceVocabularyListAdapter = new AdvanceVocabularyListAdapter(getActivity(),advanceWords);
+        listViewAdvanceVocabulary.setAdapter(advanceVocabularyListAdapter);
 
 
         return rootView;

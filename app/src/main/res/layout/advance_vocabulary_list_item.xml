@@ -11,7 +11,7 @@
         android:orientation="vertical">
         <TextView
             android:text="hola"
-            android:id="@+id/kanji_list_kanji"
+            android:id="@+id/adv_vocabulary_kanji"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="60"
@@ -21,7 +21,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         <TextView
             android:text="hola"
-            android:id="@+id/kanji_list_spanish"
+            android:id="@+id/adv_vocabulary_spanish"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="40"
@@ -31,18 +31,18 @@
     </LinearLayout>
 
 
-        <GridView
+        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="70"
-            android:id="@+id/kanji_list_grid"
-            android:numColumns="3"
+            android:layout_weight="50"
+            android:id="@+id/adv_vocabulary_hiragana"
+            android:gravity="center"
+            android:textSize="22sp"
             android:layout_margin="@dimen/dim_4pd"
-            android:stretchMode="columnWidth"
-            android:horizontalSpacing="@dimen/dim_4pd"
-            android:verticalSpacing="@dimen/dim_2pd">
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            >
 
-        </GridView>
+        </TextView>
 
 
 </LinearLayout>

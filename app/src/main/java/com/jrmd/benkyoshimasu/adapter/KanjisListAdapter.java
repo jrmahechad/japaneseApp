@@ -1,6 +1,7 @@
 package com.jrmd.benkyoshimasu.adapter;
 
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +57,7 @@ public class KanjisListAdapter extends BaseAdapter {
 
         if( type==0){
             TextView kanji = (TextView) convertView.findViewById(R.id.kanji_list_kanji);
+            TextView spanish = (TextView) convertView.findViewById(R.id.kanji_list_spanish);
             GridView grid = (GridView) convertView.findViewById(R.id.kanji_list_grid);
             //grid.setNumColumns(kanjis.get(position).getReadings().size()/3);
             if(kanjis.get(position).getReadings()!=null&&kanjis.get(position).getReadings().size()>0){
@@ -76,6 +78,9 @@ public class KanjisListAdapter extends BaseAdapter {
 
 
             kanji.setText(kanjis.get(position).getKanji());
+            spanish.setText(kanjis.get(position).getMeaning());
+            if(kanjis.get(position).getMeaning().length()>12)
+                spanish.setTextSize(TypedValue.COMPLEX_UNIT_SP,15);
 
         }else{
             TextView title = (TextView) convertView.findViewById(R.id.section_item_title);
