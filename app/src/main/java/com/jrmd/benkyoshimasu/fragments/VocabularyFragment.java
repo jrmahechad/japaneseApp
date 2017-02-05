@@ -54,6 +54,7 @@ public class VocabularyFragment extends Fragment{
     private LessonsWords lessonsWords;
     SharedPreferences pref;
     private int MAX_LAST_MAIN_WORDS=5;
+    private int countWords;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,12 +67,13 @@ public class VocabularyFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_vocabulary, container, false);
-        randomGenerator = new Random();
+        randomGenerator = new Random(System.currentTimeMillis()/1000);
         mMainWord = (TextView) rootView.findViewById(R.id.main_word);
         mKanji = (TextView) rootView.findViewById(R.id.kanji);
         mCorrectAnswer = (TextView) rootView.findViewById(R.id.correct_answer_word);
         mOptionGrid = (GridView) rootView.findViewById(R.id.options_grid);
         lastMainWords = new ArrayList<Word>();
+        countWords=0;
 
         return rootView;
     }
@@ -207,6 +209,10 @@ public class VocabularyFragment extends Fragment{
     private Boolean selectMainWord(){
         mCorrectAnswer.setText("");
         int mainPosition;
+        if(countWords>=5){
+            randomGenerator= new Random(System.currentTimeMillis()/1000);
+            countWords=0;
+        }
         boolean mainWordSelected=false;
         do{
             mainPosition=randomGenerator.nextInt(words.size());
@@ -239,6 +245,7 @@ public class VocabularyFragment extends Fragment{
         String kanji=japanese?mainWord.getKanji():"";
         mMainWord.setText(textMain);
         mKanji.setText(kanji);
+        countWords++;
         return japanese;
     }
 

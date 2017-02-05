@@ -54,6 +54,7 @@ public class KanjisFragment extends Fragment{
     private LessonsKanjis lessonsKanjis;
     SharedPreferences pref;
     private int MAX_LAST_MAIN_KANJI=5;
+    private int countWords;
 
 
     @Override
@@ -67,12 +68,14 @@ public class KanjisFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_kanjis, container, false);
-        randomGenerator = new Random();
+        randomGenerator = new Random(System.currentTimeMillis()/1000);
         mMeaning = (TextView) rootView.findViewById(R.id.kanjis_meaning);
         mCorrectAnswer = (TextView) rootView.findViewById(R.id.correct_answer_kanji);
         mOptionGrid = (GridView) rootView.findViewById(R.id.kanjis_options_grid);
         mReadingsGrid = (GridView) rootView.findViewById(R.id.kanjis_readings_grid);
         lastMainKanjis= new ArrayList<Kanji>();
+        countWords=0;
+        countWords=0;
         return rootView;
     }
 
@@ -207,7 +210,10 @@ public class KanjisFragment extends Fragment{
         mCorrectAnswer.setText("");
 
         int mainPosition;
-
+        if(countWords>=5){
+            randomGenerator= new Random(System.currentTimeMillis()/1000);
+            countWords=0;
+        }
         boolean mainKanjiSelected=false;
         do{
             mainPosition=randomGenerator.nextInt(kanjis.size());
@@ -246,6 +252,7 @@ public class KanjisFragment extends Fragment{
             mReadingsGrid.setVisibility(View.VISIBLE);
         }
         mMeaning.setText(mainKanji.getMeaning());
+        countWords++;
 
     }
 

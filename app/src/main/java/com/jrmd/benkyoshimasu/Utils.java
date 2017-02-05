@@ -213,6 +213,39 @@ public class Utils {
         words6.add(new Word("Tarea","しゅくだい","",6));
         words6.add(new Word("Ténis","テニス","",6));
         words6.add(new Word("Fútbol","サッカー","",6));
+        words6.add(new Word("Pepino","きゅうり","",6));
+        words6.add(new Word("Tomate","トマト","",6));
+        words6.add(new Word("Berenjena","なす","",6));
+        words6.add(new Word("Frijoles","まめ","",6));
+        words6.add(new Word("Repollo","キャベツ","",6));
+        words6.add(new Word("Cebolla Verde","ねぎ","",6));
+        words6.add(new Word("Col chino","はくさい","",6));
+        words6.add(new Word("Espinaca","ほうれんそう","",6));
+        words6.add(new Word("Lechuga","レタス","",6));
+        words6.add(new Word("Papas","じゃがいも","",6));
+        words6.add(new Word("Nabo japones","だいこん","",6));
+        words6.add(new Word("Cebolla","たまねぎ","",6));
+        words6.add(new Word("Zanahoria","にんじん","",6));
+        words6.add(new Word("Fresas","いちご","",6));
+        words6.add(new Word("Durazno","もも","",6));
+        words6.add(new Word("Sandia","すいか","",6));
+        words6.add(new Word("Uvas","ぶどう","",6));
+        words6.add(new Word("Pera japonesa","なし","",6));
+        words6.add(new Word("Naranja mandarina","みかん","",6));
+        words6.add(new Word("Manzana","りんご","",6));
+        words6.add(new Word("Platano","バナナ","",6));
+        words6.add(new Word("Carne vaca","ぎゅうにく","",6));
+        words6.add(new Word("Pollo","とりにく","",6));
+        words6.add(new Word("Cerdo","ぶたにく","",6));
+        words6.add(new Word("Salchicha","ソーセージ","",6));
+        words6.add(new Word("Jamon","ハム","",6));
+        words6.add(new Word("Sardina","いわし","",6));
+        words6.add(new Word("Salmon","さけ","",6));
+        words6.add(new Word("Atun","まぐろ","",6));
+        words6.add(new Word("Camaron","えび","",6));
+        words6.add(new Word("Cangrejo","かに","",6));
+        words6.add(new Word("Calamar","いか","",6));
+        words6.add(new Word("Pulpo","たこ","",6));
 
 
         lessons.setWordsLesson1(words1);
@@ -511,46 +544,100 @@ public class Utils {
         readings.add(new Reading("すきな",true));
         readings.add(new Reading("すく",true));
         readings.add(new Reading("コウ",false));
-        kanjis5.add(new Kanji("好","Amor, Gustar", readings,4));
+        kanjis5.add(new Kanji("好","Amor, Gustar", readings,6));
         readings = new ArrayList<Reading>();
 
         readings.add(new Reading("おとこ",true));
-        readings.add(new Reading("ダイ",false));
+        readings.add(new Reading("ダン",false));
         readings.add(new Reading("ナン",false));
-        kanjis5.add(new Kanji("男","Hombre", readings,4));
+        kanjis5.add(new Kanji("男","Hombre", readings,7));
         readings = new ArrayList<Reading>();
 
         readings.add(new Reading("はやし",true));
         readings.add(new Reading("リン",false));
-        kanjis5.add(new Kanji("林","Madera, Huerto", readings,4));
+        kanjis5.add(new Kanji("林","Madera, Huerto", readings,8));
         readings = new ArrayList<Reading>();
 
         readings.add(new Reading("もり",true));
         readings.add(new Reading("シン",false));
-        kanjis5.add(new Kanji("森","Bosque, Selva", readings,4));
+        kanjis5.add(new Kanji("森","Bosque, Selva", readings,12));
         readings = new ArrayList<Reading>();
 
         readings.add(new Reading("あいだ",true));
         readings.add(new Reading("ま",true));
         readings.add(new Reading("カン",false));
-        kanjis5.add(new Kanji("間","Entre", readings,4));
+        kanjis5.add(new Kanji("間","Entre", readings,12));
         readings = new ArrayList<Reading>();
 
         readings.add(new Reading("はたけ",true));
         readings.add(new Reading("はた",true));
-        kanjis5.add(new Kanji("畑","Campo cultivado", readings,4));
+        kanjis5.add(new Kanji("畑","Campo cultivado", readings,9));
         readings = new ArrayList<Reading>();
 
         readings.add(new Reading("いわ",true));
         readings.add(new Reading("ガン",false));
-        kanjis5.add(new Kanji("岩","Roca", readings,4));
+        kanjis5.add(new Kanji("岩","Roca", readings,8));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("め",true));
+        readings.add(new Reading("モク",false));
+        kanjis6.add(new Kanji("目","Ojo", readings,5));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("みみ",true));
+        readings.add(new Reading("ジ",false));
+        kanjis6.add(new Kanji("耳","Oreja", readings,6));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("て",true));
+        readings.add(new Reading("シュ",false));
+        kanjis6.add(new Kanji("手","Mano", readings,4));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("あし",true));
+        readings.add(new Reading("たりる",true));
+        readings.add(new Reading("たす",true));
+        readings.add(new Reading("ソク",false));
+        kanjis6.add(new Kanji("足","Pierna", readings,7));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("あめ",true));
+        readings.add(new Reading("ウ",false));
+        kanjis6.add(new Kanji("雨","Lluvia", readings,8));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("たけ",true));
+        readings.add(new Reading("チク",false));
+        kanjis6.add(new Kanji("竹","Bamboo", readings,6));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("こめ",true));
+        readings.add(new Reading("マイ",false));
+        readings.add(new Reading("ベイ",false));
+        kanjis6.add(new Kanji("米","Arroz", readings,6));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("かい",true));
+        readings.add(new Reading("バイ",false));
+        kanjis6.add(new Kanji("貝","Marisco", readings,7));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("いし",true));
+        readings.add(new Reading("セキ",false));
+        kanjis6.add(new Kanji("石","Piedra", readings,5));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("いと",true));
+        readings.add(new Reading("シ",false));
+        kanjis6.add(new Kanji("糸","Hilo", readings,6));
         readings = new ArrayList<Reading>();
 
         /*readings.add(new Reading("",true));
         readings.add(new Reading("",true));
-        readings.add(new Reading("",true));
-        kanjis5.add(new Kanji("","", readings,4));
+        readings.add(new Reading("",false));
+        kanjis5.add(new Kanji("","", readings,5));
         readings = new ArrayList<Reading>();*/
+
 
 
 
@@ -631,6 +718,53 @@ public class Utils {
         words4.add(new Word("Dinamica","りきがく","力学",4));
         words4.add(new Word("Cuantas personas?","なんにん","何人",4));
         words4.add(new Word("Que año?","なんねん","何年",4));
+
+
+        words5.add(new Word("Brillante","あかるい","明るい",5));
+        words5.add(new Word("Amanecer","あける","明ける",5));
+        words5.add(new Word("Descansar","やすむ","休む",5));
+        words5.add(new Word("Descanso","やすみ","休み",5));
+        words5.add(new Word("Un Festivo","きゅうじつ","休日",5));
+        words5.add(new Word("Fuerza fisica","たいりょく","体力",5));
+        words5.add(new Word("Educación Fisica","たいいく","体育",5));
+        words5.add(new Word("Favorito","すきな","すきな",5));
+        words5.add(new Word("Ser amado","すかれる","好かれる",5));
+        words5.add(new Word("Hombre","おとこ","男",5));
+        words5.add(new Word("Niño","おとこのこ","男の子",5));
+        words5.add(new Word("Niño estudiante","だんしがくせい","男子学生",5));
+        words5.add(new Word("Madera","はやし","林",5));
+        words5.add(new Word("Forestry","りんぎょう","林業",5));
+        words5.add(new Word("Bosque","もり","森",5));
+        words5.add(new Word("Madera y bosque","しんりん","森林",5));
+        words5.add(new Word("Entre","あいだ","間",5));
+        words5.add(new Word("Un año","いちねんかん","一年間",5));
+        words5.add(new Word("Ser puntual","まにあう","間に合う",5));
+        words5.add(new Word("Tiempo","じかん","時間",5));
+        words5.add(new Word("Campo cultivado","はたけ","畑",5));
+        words5.add(new Word("Campo de arroz","たはた","田畑",5));
+        words5.add(new Word("Montaña rocosa","いわやま","岩山",5));
+        words5.add(new Word("Roca","いわ","岩",5));
+        words5.add(new Word("Rocas y piedras","がんせき","岩石",5));
+
+
+        words6.add(new Word("Tabla de contenido","もくじ","目次",6));
+        words6.add(new Word("Superior(rango)","めうえ","目上",6));
+        words6.add(new Word("Otorrinología","じびか","耳鼻科",6));
+        words6.add(new Word("Carta","てがみ","手紙",6));
+        words6.add(new Word("Habilidoso, Inteligente","じょうずな","上手な",6));
+        words6.add(new Word("No Habilidoso, Torpe","へたな","下手な",6));
+        words6.add(new Word("Dos pares","にそく","二足",6));
+        words6.add(new Word("Ser suficiente","たりる","足りる",6));
+        words6.add(new Word("Lluvia","あめ","雨",6));
+        words6.add(new Word("Clima lluvioso","うてん","雨天",6));
+        words6.add(new Word("Bambu","たけ","竹",6));
+        words6.add(new Word("Brote de bambu","たけのこ","竹の子",6));
+        words6.add(new Word("Centro America","ちゅうべい","中米",6));
+        words6.add(new Word("America","べいこく","米国",6));
+        words6.add(new Word("Concha","かいがら","貝殻",6));
+        words6.add(new Word("Petroleo, aceite","せきゆ","石油",6));
+        words6.add(new Word("Fosil","かせき","化石",6));
+        words6.add(new Word("Hilo de lana","けいと","毛糸",6));
 
 
         lessons.setWordsLesson1(words1);

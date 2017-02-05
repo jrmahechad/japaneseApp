@@ -51,6 +51,7 @@ public class AdvanceVocabularyFragment extends Fragment{
     private Random randomGenerator;
     private List<Integer>activeLessons;
     private Integer japanese;
+    private int countWords;
     /*
         1 kanji-hiragana
         2 kanji-español
@@ -75,12 +76,13 @@ public class AdvanceVocabularyFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_vocabulary, container, false);
-        randomGenerator = new Random();
+        randomGenerator = new Random(System.currentTimeMillis()/1000);
         mMainWord = (TextView) rootView.findViewById(R.id.main_word);
         mKanji = (TextView) rootView.findViewById(R.id.kanji);
         mCorrectAnswer = (TextView) rootView.findViewById(R.id.correct_answer_word);
         mOptionGrid = (GridView) rootView.findViewById(R.id.options_grid);
         lastMainWords = new ArrayList<Word>();
+        countWords=0;
 
         return rootView;
     }
@@ -184,6 +186,7 @@ public class AdvanceVocabularyFragment extends Fragment{
 
                 Boolean result=false;
 
+
                 if(japanese==1||japanese==6){
                     //hiragana
                     result= mainWord.getJapanese().equals(options.get(i).getJapanese());
@@ -206,7 +209,7 @@ public class AdvanceVocabularyFragment extends Fragment{
                     optionTextClicked.setTextColor(Color.WHITE);
                     delayTime=2000;
                 }
-
+                mKanji.setVisibility(View.VISIBLE);
                 Handler mHandler = new Handler();
                 mHandler.postDelayed(new Runnable() {
                     public void run() {
@@ -223,6 +226,10 @@ public class AdvanceVocabularyFragment extends Fragment{
         mCorrectAnswer.setText("");
         int mainPosition;
         boolean mainWordSelected=false;
+        if(countWords>=5){
+            randomGenerator= new Random(System.currentTimeMillis()/1000);
+            countWords=0;
+        }
         do{
             mainPosition=randomGenerator.nextInt(words.size());
             mainWord=words.get(mainPosition);
@@ -252,31 +259,38 @@ public class AdvanceVocabularyFragment extends Fragment{
         Integer firstSelection = randomGenerator.nextInt(100);
         Integer secondSelection = randomGenerator.nextInt(100);
         String textMain="";
+        String secondText="";
         if(firstSelection<30){
             textMain=mainWord.getSpanish();
             if(secondSelection<50){
                 //español-hiragana
+                secondText=mainWord.getKanji();
                 japanese=6;
             }else{
                 //español-kanji
+                secondText=mainWord.getJapanese();
                 japanese=5;
             }
         }else if(firstSelection<60){
             textMain=mainWord.getJapanese();
             if(secondSelection<40){
                 //hiragana-español
+                secondText=mainWord.getKanji();
                 japanese=4;
             }else{
                 //hiragana-kanji
+                secondText=mainWord.getSpanish();
                 japanese=3;
             }
         }else{
             textMain=mainWord.getKanji();
             if(secondSelection<60){
-                //kanji-hiragana
+                //kanji-español
+                secondText=mainWord.getJapanese();
                 japanese=2;
             }else{
-                //kanji-español
+                //kanji-hiragana
+                secondText=mainWord.getSpanish();
                 japanese=1;
             }
         }
@@ -284,7 +298,11 @@ public class AdvanceVocabularyFragment extends Fragment{
 
         //String kanji=japanese?mainWord.getKanji():"";
         mMainWord.setText(textMain);
+        mKanji.setText(secondText);
+
         mKanji.setVisibility(View.GONE);
+
+        countWords++;
         //mKanji.setText(kanji);
         return japanese;
     }
