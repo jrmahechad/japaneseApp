@@ -261,9 +261,9 @@ public class PracticeWritingFragment extends Fragment{
     public void updateAnswerCount(Boolean result){
         SharedPreferences.Editor editor = pref.edit();
         if(result){
-            editor.putInt(getString(R.string.pref_correct_word), pref.getInt(getString(R.string.pref_correct_word), 0)+1);
+            editor.putInt(getString(R.string.pref_write_correct_word), pref.getInt(getString(R.string.pref_write_correct_word), 0)+1);
         }else{
-            editor.putInt(getString(R.string.pref_incorrect_word), pref.getInt(getString(R.string.pref_incorrect_word), 0)+1);
+            editor.putInt(getString(R.string.pref_write_incorrect_word), pref.getInt(getString(R.string.pref_write_incorrect_word), 0)+1);
         }
         editor.commit();
         showAnswerCounts();
