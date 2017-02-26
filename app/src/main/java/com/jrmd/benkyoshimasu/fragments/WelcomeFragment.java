@@ -16,6 +16,7 @@ import com.jrmd.benkyoshimasu.R;
 import com.jrmd.benkyoshimasu.activity.AdvanceVocabularyActivity;
 import com.jrmd.benkyoshimasu.activity.KanjisActivity;
 import com.jrmd.benkyoshimasu.activity.ListActivity;
+import com.jrmd.benkyoshimasu.activity.PracticeWritingActivity;
 import com.jrmd.benkyoshimasu.activity.SettingsActivity;
 import com.jrmd.benkyoshimasu.activity.VocabularyActivity;
 
@@ -26,7 +27,7 @@ import com.jrmd.benkyoshimasu.activity.VocabularyActivity;
 public class WelcomeFragment extends Fragment implements View.OnClickListener{
 
     View rootView;
-    Button mVocabularyButton, mKanjisButton,mAdvVocabularyButton;
+    Button mVocabularyButton, mKanjisButton,mAdvVocabularyButton,mWritingPractice;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,10 +43,12 @@ public class WelcomeFragment extends Fragment implements View.OnClickListener{
         mVocabularyButton= (Button)rootView.findViewById(R.id.welcome_vocabulary_button);
         mKanjisButton = (Button)rootView.findViewById(R.id.welcome_kanjis_button);
         mAdvVocabularyButton = (Button)rootView.findViewById(R.id.welcome_advance_vocabulary_button);
+        mWritingPractice = (Button)rootView.findViewById(R.id.welcome_write_advance_vocabulary_button);
 
         mVocabularyButton.setOnClickListener(this);
         mKanjisButton.setOnClickListener(this);
         mAdvVocabularyButton.setOnClickListener(this);
+        mWritingPractice.setOnClickListener(this);
 
         return rootView;
     }
@@ -64,6 +67,10 @@ public class WelcomeFragment extends Fragment implements View.OnClickListener{
             case R.id.welcome_advance_vocabulary_button:
                 Intent intentAV= new Intent(getActivity(),AdvanceVocabularyActivity.class);
                 startActivity(intentAV);
+                break;
+            case R.id.welcome_write_advance_vocabulary_button:
+                Intent intentPW= new Intent(getActivity(),PracticeWritingActivity.class);
+                startActivity(intentPW);
                 break;
             default:
                 break;
