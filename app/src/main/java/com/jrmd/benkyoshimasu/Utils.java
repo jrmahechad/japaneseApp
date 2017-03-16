@@ -26,6 +26,9 @@ public class Utils {
         List<Word> words4 = new ArrayList<Word>();
         List<Word> words5 = new ArrayList<Word>();
         List<Word> words6 = new ArrayList<Word>();
+        List<Word> words7 = new ArrayList<Word>();
+        List<Word> words8 = new ArrayList<Word>();
+        List<Word> words9 = new ArrayList<Word>();
         words1.add(new Word("Maestro/Profesor","せんせい","先生",1));
         words1.add(new Word("Maestro/Profesor","きょうし","",1));
         words1.add(new Word("Estudíante","がくせい","学生",1));
@@ -247,6 +250,46 @@ public class Utils {
         words6.add(new Word("Calamar","いか","",6));
         words6.add(new Word("Pulpo","たこ","",6));
 
+        words7.add(new Word("Cortar","きります","切ります",7));
+        words7.add(new Word("Enviar","おくります","送ります",7));
+        words7.add(new Word("Regalar","あげます","",7));
+        words7.add(new Word("Recibir","もらいます","",7));
+        words7.add(new Word("Prestar ","かします","貸します",7));
+        words7.add(new Word("Pedir prestado","かります","借ります",7));
+        words7.add(new Word("Enseñar","おしえます","教えます",7));
+        words7.add(new Word("Aprender","ならいます","ならいます",7));
+        words7.add(new Word("Hacer llamada","かけます","",7));
+        words7.add(new Word("Mano","て","",7));
+        words7.add(new Word("Palillos","はし","",7));
+        words7.add(new Word("Cuchara","スプーン","",7));
+        words7.add(new Word("Cuchillo","ナイフ","",7));
+        words7.add(new Word("Tenedor","フォク","",7));
+        words7.add(new Word("Tijeras ","はさみ","",7));
+        words7.add(new Word("Fax","ファクス","",7));
+        words7.add(new Word("Procesador de palabras ","ワープロ","",7));
+        words7.add(new Word("Computador personal ","パソコン","",7));
+        words7.add(new Word("Perforadora","パンチ","",7));
+        words7.add(new Word("Cosedora ","ホッチキス","",7));
+        words7.add(new Word("Cinta pegante","セローテプ","",7));
+        words7.add(new Word("Borrador ","けしゴム","",7));
+        words7.add(new Word("Papel ","かみ","",7));
+        words7.add(new Word("Flor","はな","花",7));
+        words7.add(new Word("Camisa","シャツ","",7));
+        words7.add(new Word("Regalo","プレゼント","",7));
+        words7.add(new Word("Equipaje ","にもつ","荷物",7));
+        words7.add(new Word("Dinero","おかね","お金",7));
+        words7.add(new Word("Tiquete ","きっぷ","",7));
+        words7.add(new Word("Navidad","クリスマス","",7));
+        words7.add(new Word("Papá ","ちち","父",7));
+        words7.add(new Word("Mamá ","はは","母",7));
+        words7.add(new Word("Su papá ","おとうさん","お父さん",7));
+        words7.add(new Word("Su mamá ","おかあさん","お母さん",7));
+        words7.add(new Word("Ya","もう","",7));
+        words7.add(new Word("Todavía ","まだ","",7));
+        words7.add(new Word("Después ","これから","",7));
+        words7.add(new Word("Viaje ","りょこう","",7));
+        words7.add(new Word("Suvenir ","おみやげ","",7));
+
 
         lessons.setWordsLesson1(words1);
         lessons.setWordsLesson2(words2);
@@ -254,6 +297,9 @@ public class Utils {
         lessons.setWordsLesson4(words4);
         lessons.setWordsLesson5(words5);
         lessons.setWordsLesson6(words6);
+        lessons.setWordsLesson7(words7);
+        lessons.setWordsLesson8(words8);
+        lessons.setWordsLesson9(words9);
 
 
 
@@ -274,6 +320,9 @@ public class Utils {
         List<Kanji> kanjis4=new ArrayList<Kanji>();
         List<Kanji> kanjis5=new ArrayList<Kanji>();
         List<Kanji> kanjis6=new ArrayList<Kanji>();
+        List<Kanji> kanjis7=new ArrayList<Kanji>();
+        List<Kanji> kanjis8=new ArrayList<Kanji>();
+        List<Kanji> kanjis9=new ArrayList<Kanji>();
 
         List<Reading> readings = new ArrayList<Reading>();
         readings.add(new Reading("ひ",true));
@@ -632,6 +681,47 @@ public class Utils {
         kanjis6.add(new Kanji("糸","Hilo", readings,6));
         readings = new ArrayList<Reading>();
 
+        readings.add(new Reading("はな",true));
+        readings.add(new Reading("カ",false));
+        kanjis7.add(new Kanji("花","Flor", readings,7));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("チャ",false));
+        readings.add(new Reading("サ",false));
+        kanjis7.add(new Kanji("茶","Té", readings,9));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("ニク ",false));
+        kanjis7.add(new Kanji("肉","Carne", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("ブン",false));
+        readings.add(new Reading("モン",false));
+        kanjis7.add(new Kanji("文","Frase", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("ジ",false));
+        kanjis7.add(new Kanji("字","Caracteres chinos", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("もの",true));
+        readings.add(new Reading("ブツ",false));
+        readings.add(new Reading("モツ",false));
+        kanjis7.add(new Kanji("物","Cosa", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("うし",true));
+        readings.add(new Reading("ギュウ",false));
+        kanjis7.add(new Kanji("牛","Vaca", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("うま",true));
+        readings.add(new Reading("バ",false));
+        kanjis7.add(new Kanji("馬","Caballo", readings,10));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("とり",true));
+        readings.add(new Reading("チョウ",false));
+        kanjis7.add(new Kanji("鳥","Pájaro", readings,11));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("さかな",true));
+        readings.add(new Reading("うお",false));
+        readings.add(new Reading("ジョ",false));
+        kanjis7.add(new Kanji("魚","Pescado", readings,11));
+        readings = new ArrayList<Reading>();
+
         /*readings.add(new Reading("",true));
         readings.add(new Reading("",true));
         readings.add(new Reading("",false));
@@ -647,6 +737,9 @@ public class Utils {
         lessons.setKanjisLesson4(kanjis4);
         lessons.setKanjisLesson5(kanjis5);
         lessons.setKanjisLesson6(kanjis6);
+        lessons.setKanjisLesson7(kanjis7);
+        lessons.setKanjisLesson8(kanjis8);
+        lessons.setKanjisLesson9(kanjis9);
 
         return lessons;
 
@@ -661,6 +754,9 @@ public class Utils {
         List<Word> words4 = new ArrayList<Word>();
         List<Word> words5 = new ArrayList<Word>();
         List<Word> words6 = new ArrayList<Word>();
+        List<Word> words7 = new ArrayList<Word>();
+        List<Word> words8 = new ArrayList<Word>();
+        List<Word> words9 = new ArrayList<Word>();
 
         words1.add(new Word("Japon","にほん","日本",1));
         words1.add(new Word("Volcan","かざん","火山",1));
@@ -766,6 +862,42 @@ public class Utils {
         words6.add(new Word("Fosil","かせき","化石",6));
         words6.add(new Word("Hilo de lana","けいと","毛糸",6));
 
+        words7.add(new Word("Flor","花","はな",7));
+        words7.add(new Word("Fuegos artificiales","花火","はなび",7));
+        words7.add(new Word("Florero","花びん","かびん",7));
+        words7.add(new Word("Té","お茶","おちゃ",7));
+        words7.add(new Word("Té verde","日本茶","にほんちゃ",7));
+        words7.add(new Word("Cafetería","喫茶店","きっさてん",7));
+        words7.add(new Word("Té negro","紅茶","こうちゃ",7));
+        words7.add(new Word("Carne","肉","にく",7));
+        words7.add(new Word("Carne pollo","鳥肉","とりにく",7));
+        words7.add(new Word("Carne vaca","牛肉","ぎゅうにく",7));
+        words7.add(new Word("El cuerpo","肉体","にくたい",7));
+        words7.add(new Word("Frase","文","ぶん",7));
+        words7.add(new Word("Literatura","文学","ぶんがく",7));
+        words7.add(new Word("Ministerio educación","文部省","もんぶしょう",7));
+        words7.add(new Word("Caracteres chinos","字","じ",7));
+        words7.add(new Word("Kanji","漢字","かんじ",7));
+        words7.add(new Word("Una letra","文字","もじ",7));
+        words7.add(new Word("… letras","~字","~じ",7));
+        words7.add(new Word("Cosa","物","もの",7));
+        words7.add(new Word("Ser vivo","生物","せいぶつ",7));
+        words7.add(new Word("Comprar","買い物","かいもの",7));
+        words7.add(new Word("Equipaje","荷物","にもつ",7));
+        words7.add(new Word("Vaca","牛","うし",7));
+        words7.add(new Word("Leche vaca","牛乳","ぎゅうにゅう",7));
+        words7.add(new Word("Caballo","馬","うま",7));
+        words7.add(new Word("Carruaje","馬車","ばしゃ",7));
+        words7.add(new Word("Caballos de fuerza","馬力","ばりき",7));
+        words7.add(new Word("Pájaro","鳥","とり",7));
+        words7.add(new Word("Cisne","白鳥","はくちょう",7));
+        words7.add(new Word("Pollo asado","焼き鳥","やきとり",7));
+        words7.add(new Word("Pájaro salvaje","野鳥","やちょう",7));
+        words7.add(new Word("Pescado","魚","さかな",7));
+        words7.add(new Word("Pescaderia","魚屋","さかなや",7));
+        words7.add(new Word("Pescado frito","焼き魚","やきざかな",7));
+        words7.add(new Word("Goldfish","金魚","きんぎょ",7));
+
 
         lessons.setWordsLesson1(words1);
         lessons.setWordsLesson2(words2);
@@ -773,6 +905,9 @@ public class Utils {
         lessons.setWordsLesson4(words4);
         lessons.setWordsLesson5(words5);
         lessons.setWordsLesson6(words6);
+        lessons.setWordsLesson7(words7);
+        lessons.setWordsLesson8(words7);
+        lessons.setWordsLesson9(words7);
 
 
         return lessons;

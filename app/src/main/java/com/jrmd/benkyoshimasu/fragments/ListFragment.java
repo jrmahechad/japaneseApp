@@ -92,6 +92,12 @@ public class ListFragment extends Fragment {
         words.addAll(lessonsWords.getWordsLesson5());
         words.add(new Word("Lección 6","","",-1));
         words.addAll(lessonsWords.getWordsLesson6());
+        words.add(new Word("Lección 7","","",-1));
+        words.addAll(lessonsWords.getWordsLesson7());
+        words.add(new Word("Lección 8","","",-1));
+        words.addAll(lessonsWords.getWordsLesson8());
+        words.add(new Word("Lección 9","","",-1));
+        words.addAll(lessonsWords.getWordsLesson9());
 
         WordsListAdapter wordsAdapter = new WordsListAdapter(getActivity(),words);
         listViewVocabulary.setAdapter(wordsAdapter);
@@ -110,6 +116,12 @@ public class ListFragment extends Fragment {
         kanjis.addAll(lessonsKanjis.getKanjisLesson5());
         kanjis.add(new Kanji("","Lección 6",-1));
         kanjis.addAll(lessonsKanjis.getKanjisLesson6());
+        kanjis.add(new Kanji("","Lección 7",-1));
+        kanjis.addAll(lessonsKanjis.getKanjisLesson7());
+        kanjis.add(new Kanji("","Lección 8",-1));
+        kanjis.addAll(lessonsKanjis.getKanjisLesson8());
+        kanjis.add(new Kanji("","Lección 9",-1));
+        kanjis.addAll(lessonsKanjis.getKanjisLesson9());
 
         KanjisListAdapter kanjisAdapter = new KanjisListAdapter(getActivity(),kanjis);
         listViewKanjis.setAdapter(kanjisAdapter);
@@ -129,6 +141,12 @@ public class ListFragment extends Fragment {
         advanceWords.addAll(lessonsAdvanceWords.getWordsLesson5());
         advanceWords.add(new Word("Lección 6","","",-1));
         advanceWords.addAll(lessonsAdvanceWords.getWordsLesson6());
+        advanceWords.add(new Word("Lección 7","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson7());
+        advanceWords.add(new Word("Lección 8","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson8());
+        advanceWords.add(new Word("Lección 9","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson9());
 
         AdvanceVocabularyListAdapter advanceVocabularyListAdapter = new AdvanceVocabularyListAdapter(getActivity(),advanceWords);
         listViewAdvanceVocabulary.setAdapter(advanceVocabularyListAdapter);

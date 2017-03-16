@@ -17,6 +17,9 @@
     <string name="lesson4">Lección 4</string>
     <string name="lesson5">Lección 5</string>
     <string name="lesson6">Lección 6</string>
+    <string name="lesson7">Lección 7</string>
+    <string name="lesson8">Lección 8</string>
+    <string name="lesson9">Lección 9</string>
 
     <!-- NO TRADUCIR!!!!!!!!!! -->
     <string name="lesson_1_key">lesson_1_key</string>
@@ -25,6 +28,9 @@
     <string name="lesson_4_key">lesson_4_key</string>
     <string name="lesson_5_key">lesson_5_key</string>
     <string name="lesson_6_key">lesson_6_key</string>
+    <string name="lesson_7_key">lesson_7_key</string>
+    <string name="lesson_8_key">lesson_8_key</string>
+    <string name="lesson_9_key">lesson_9_key</string>
 
     <string name="pref_correct_kanji">pref_correct_kanji</string>
     <string name="pref_incorrect_kanji">pref_incorrect_kanji</string>

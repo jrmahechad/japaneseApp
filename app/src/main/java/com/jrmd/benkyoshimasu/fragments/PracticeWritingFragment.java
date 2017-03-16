@@ -101,6 +101,9 @@ public class PracticeWritingFragment extends Fragment{
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_4_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_5_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_6_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_7_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_8_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_9_key),false));
         activeLessons= new ArrayList<Integer>();
         for(int i=0;i<tempLessons.size();i++){
             if(tempLessons.get(i))
@@ -136,9 +139,29 @@ public class PracticeWritingFragment extends Fragment{
                 case 6:
                     words.addAll(lessonsWords.getWordsLesson6());
                     break;
+                case 7:
+                    words.addAll(lessonsWords.getWordsLesson7());
+                    break;
+                case 8:
+                    words.addAll(lessonsWords.getWordsLesson8());
+                    break;
+                case 9:
+                    words.addAll(lessonsWords.getWordsLesson9());
+                    break;
                 default:
                     break;
             }
+            if(words.size()==0){
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean(getString(R.string.lesson_1_key), true);
+                editor.commit();
+                activeLessons.add(1);
+                Snackbar snackbar = Snackbar
+                        .make(rootView,getString(R.string.warning_no_lesson), Snackbar.LENGTH_LONG);
+                snackbar.show();
+                words.addAll(lessonsWords.getWordsLesson1());
+            }
+
 
         }
 
