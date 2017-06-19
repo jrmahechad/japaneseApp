@@ -42,5 +42,17 @@
         android:defaultValue="false"
         android:title="@string/lesson9"
         android:key="@string/lesson_9_key" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/lesson10"
+        android:key="@string/lesson_10_key" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/lesson11"
+        android:key="@string/lesson_11_key" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/lesson12"
+        android:key="@string/lesson_12_key" />
 
 </PreferenceScreen>

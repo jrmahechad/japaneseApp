@@ -106,6 +106,9 @@ public class AdvanceVocabularyFragment extends Fragment{
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_7_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_8_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_9_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_10_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_11_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_12_key),false));
         activeLessons= new ArrayList<Integer>();
         for(int i=0;i<tempLessons.size();i++){
             if(tempLessons.get(i))
@@ -149,6 +152,12 @@ public class AdvanceVocabularyFragment extends Fragment{
                     break;
                 case 9:
                     words.addAll(lessonsWords.getWordsLesson9());
+                case 10:
+                    words.addAll(lessonsWords.getWordsLesson10());
+                case 11:
+                    words.addAll(lessonsWords.getWordsLesson11());
+                case 12:
+                    words.addAll(lessonsWords.getWordsLesson12());
                     break;
                 default:
                     break;
