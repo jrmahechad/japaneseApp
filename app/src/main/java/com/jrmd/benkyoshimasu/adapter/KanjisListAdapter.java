@@ -6,27 +6,77 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.jrmd.benkyoshimasu.R;
 import com.jrmd.benkyoshimasu.object.Kanji;
+import com.jrmd.benkyoshimasu.object.Reading;
 
+import java.text.Normalizer;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by julian on 06/11/2016.
  */
 
-public class KanjisListAdapter extends BaseAdapter {
+public class KanjisListAdapter extends BaseAdapter implements Filterable {
 
     Context context;
     List<Kanji> kanjis;
+    List<Kanji> allKanjis;
+    boolean japaneseSearch;
+    private ItemFilter mFilter = new ItemFilter();
 
     public KanjisListAdapter(Context context, List<Kanji> kanjis) {
         this.context = context;
-        this.kanjis = kanjis;
+        this.allKanjis=kanjis;
+        this.kanjis = filterList("");
 
+    }
+
+    public boolean isJapaneseSearch() {
+        return japaneseSearch;
+    }
+
+    public void setJapaneseSearch(boolean japaneseSearch) {
+        this.japaneseSearch = japaneseSearch;
+    }
+
+    private List<Kanji> filterList(String searchText){
+        List<Kanji> list = this.allKanjis;
+        List<Kanji> result= new ArrayList<Kanji>();
+        if(searchText==null || searchText.isEmpty())
+            return list;
+        for (Kanji k: list) {
+            if(japaneseSearch){
+                List<Reading>readings=k.getReadings();
+                if(readings!=null && readings.size()>0)
+                    for (Reading r:readings) {
+                        if(r.getReading().contains(searchText)){
+                            result.add(k);
+                            break;
+                        }
+                    }
+                /*if(k.get.contains(searchText))
+                    result.add(w);*/
+            }else{
+                String spanish = k.getMeaning();
+                spanish = Normalizer.normalize(spanish, Normalizer.Form.NFD);
+                spanish = spanish.replaceAll("[^\\p{ASCII}]", "");
+                if(spanish.toLowerCase().contains(searchText.toLowerCase()))
+                    result.add(k);
+            }
+            if(k.getStrokes()==-1){
+                result.add(k);
+            }
+
+        }
+
+        return result;
     }
 
     @Override
@@ -101,5 +151,37 @@ public class KanjisListAdapter extends BaseAdapter {
     @Override
     public int getViewTypeCount() {
         return 2;
+    }
+
+    @Override
+    public Filter getFilter() {
+        return mFilter;
+    }
+
+    private class ItemFilter extends Filter {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            String filterString = constraint.toString().toLowerCase();
+
+            FilterResults results = new FilterResults();
+
+
+            final List<Kanji> nlist = filterList(filterString);
+
+
+            results.values = nlist;
+            results.count = nlist.size();
+
+            return results;
+        }
+
+        @SuppressWarnings("unchecked")
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            kanjis = (ArrayList<Kanji>) results.values;
+            notifyDataSetChanged();
+        }
+
     }
 }

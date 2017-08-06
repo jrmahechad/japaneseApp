@@ -100,6 +100,7 @@ public class VocabularyFragment extends Fragment{
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_10_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_11_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_12_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_13_key),false));
         activeLessons= new ArrayList<Integer>();
         for(int i=0;i<tempLessons.size();i++){
             if(tempLessons.get(i))
@@ -149,6 +150,8 @@ public class VocabularyFragment extends Fragment{
                     words.addAll(lessonsWords.getWordsLesson11());
                 case 12:
                     words.addAll(lessonsWords.getWordsLesson12());
+                case 13:
+                    words.addAll(lessonsWords.getWordsLesson13());
                     break;
                 default:
                     break;

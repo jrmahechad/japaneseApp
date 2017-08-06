@@ -20,6 +20,7 @@ public class LessonsWords {
     public List<Word> wordsLesson10;
     public List<Word> wordsLesson11;
     public List<Word> wordsLesson12;
+    public List<Word> wordsLesson13;
 
     public List<Word> getWordsLesson1() {
         return wordsLesson1;
@@ -115,5 +116,13 @@ public class LessonsWords {
 
     public void setWordsLesson12(List<Word> wordsLesson12) {
         this.wordsLesson12 = wordsLesson12;
+    }
+
+    public List<Word> getWordsLesson13() {
+        return wordsLesson13;
+    }
+
+    public void setWordsLesson13(List<Word> wordsLesson13) {
+        this.wordsLesson13 = wordsLesson13;
     }
 }

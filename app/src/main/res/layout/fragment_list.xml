@@ -27,6 +27,12 @@
 
     </android.support.design.widget.TabLayout>
 
+    <EditText
+        android:id="@+id/search_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
     <ListView
         android:id="@+id/fragment_list_vocabulary"
         android:layout_width="match_parent"

@@ -4,9 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.jrmd.benkyoshimasu.R;
@@ -19,6 +22,7 @@ import com.jrmd.benkyoshimasu.object.LessonsKanjis;
 import com.jrmd.benkyoshimasu.object.LessonsWords;
 import com.jrmd.benkyoshimasu.object.Word;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +38,9 @@ public class ListFragment extends Fragment {
     private List<Kanji> kanjis;
     private int from;
     private TabLayout tabLayout;
+    private EditText searchTextView;
+    private boolean japaneseSearch;
+    private String searchText;
 
     @Nullable
     @Override
@@ -43,6 +50,9 @@ public class ListFragment extends Fragment {
         listViewKanjis = (ListView) rootView.findViewById(R.id.fragment_list_kanjis);
         listViewAdvanceVocabulary = (ListView) rootView.findViewById(R.id.fragment_list_advance_vocabulary);
         tabLayout = (TabLayout) rootView.findViewById(R.id.list_tablayout);
+        searchTextView = (EditText) rootView.findViewById(R.id.search_text);
+
+
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -104,8 +114,10 @@ public class ListFragment extends Fragment {
         words.addAll(lessonsWords.getWordsLesson11());
         words.add(new Word("Lección 12","","",-1));
         words.addAll(lessonsWords.getWordsLesson12());
+        words.add(new Word("Lección 13","","",-1));
+        words.addAll(lessonsWords.getWordsLesson13());
 
-        WordsListAdapter wordsAdapter = new WordsListAdapter(getActivity(),words);
+        final WordsListAdapter wordsAdapter = new WordsListAdapter(getActivity(),words);
         listViewVocabulary.setAdapter(wordsAdapter);
 
         LessonsKanjis lessonsKanjis = Utils.loadAllKanjis();
@@ -134,8 +146,10 @@ public class ListFragment extends Fragment {
         kanjis.addAll(lessonsKanjis.getKanjisLesson11());
         kanjis.add(new Kanji("","Lección 12",-1));
         kanjis.addAll(lessonsKanjis.getKanjisLesson12());
+        kanjis.add(new Kanji("","Lección 13",-1));
+        kanjis.addAll(lessonsKanjis.getKanjisLesson13());
 
-        KanjisListAdapter kanjisAdapter = new KanjisListAdapter(getActivity(),kanjis);
+        final KanjisListAdapter kanjisAdapter = new KanjisListAdapter(getActivity(),kanjis);
         listViewKanjis.setAdapter(kanjisAdapter);
 
         LessonsWords lessonsAdvanceWords = Utils.loadAllAdvanceLessonWords();
@@ -165,9 +179,54 @@ public class ListFragment extends Fragment {
         advanceWords.addAll(lessonsAdvanceWords.getWordsLesson11());
         advanceWords.add(new Word("Lección 12","","",-1));
         advanceWords.addAll(lessonsAdvanceWords.getWordsLesson12());
+        advanceWords.add(new Word("Lección 13","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson13());
 
-        AdvanceVocabularyListAdapter advanceVocabularyListAdapter = new AdvanceVocabularyListAdapter(getActivity(),advanceWords);
+        final AdvanceVocabularyListAdapter advanceVocabularyListAdapter = new AdvanceVocabularyListAdapter(getActivity(),advanceWords);
         listViewAdvanceVocabulary.setAdapter(advanceVocabularyListAdapter);
+
+        searchTextView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                japaneseSearch=false;
+                if(charSequence.length()>0){
+                    int i = (int) charSequence.charAt(0);
+                    if((i>=60 && i<=90) || (i>=97 && i<=122)){
+                        japaneseSearch=false;
+                    }else{
+                        japaneseSearch=true;
+                    }
+                    searchText= charSequence.toString();
+
+                }
+                wordsAdapter.setJapaneseSearch(japaneseSearch);
+                if(!japaneseSearch){
+                    searchText = Normalizer.normalize(searchText, Normalizer.Form.NFD);
+                    searchText = searchText.replaceAll("[^\\p{ASCII}]", "");
+                }
+
+
+                wordsAdapter.getFilter().filter(searchText);
+                advanceVocabularyListAdapter.setJapaneseSearch(japaneseSearch);
+                advanceVocabularyListAdapter.getFilter().filter(searchText);
+                kanjisAdapter.setJapaneseSearch(japaneseSearch);
+                kanjisAdapter.getFilter().filter(searchText);
+
+
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
 
         return rootView;

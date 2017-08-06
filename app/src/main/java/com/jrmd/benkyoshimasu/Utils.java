@@ -32,6 +32,7 @@ public class Utils {
         List<Word> words10 = new ArrayList<Word>();
         List<Word> words11 = new ArrayList<Word>();
         List<Word> words12 = new ArrayList<Word>();
+        List<Word> words13 = new ArrayList<Word>();
         words1.add(new Word("Maestro/Profesor","せんせい","先生",1));
         words1.add(new Word("Maestro/Profesor","きょうし","",1));
         words1.add(new Word("Estudíante","がくせい","学生",1));
@@ -499,6 +500,77 @@ public class Utils {
         words11.add(new Word("Todo, todos ","みんな","",11));
         words11.add(new Word("Sólo ","-だけ","",11));
 
+        words12.add(new Word("Fácil ","かんたん","",12));
+        words12.add(new Word("Cercano ","ちかい","",12));
+        words12.add(new Word("Lejano","とおい","",12));
+        words12.add(new Word("Rápido ","はやい","",12));
+        words12.add(new Word("Tarde / lento ","おそい","",12));
+        words12.add(new Word("Muchos","おおい","",12));
+        words12.add(new Word("Poca","すくない。","",12));
+        words12.add(new Word("Tibio ","あたたかい","",12));
+        words12.add(new Word("Fresco ","すずしい","",12));
+        words12.add(new Word("Dulce ","あまい","",12));
+        words12.add(new Word("Picante ","からい","",12));
+        words12.add(new Word("Pesado","おもい","",12));
+        words12.add(new Word("Ligero ","かるい","",12));
+        words12.add(new Word("","いい","",12));
+        words12.add(new Word("Estación (año) ","きせつ","",12));
+        words12.add(new Word("Primavera ","はる","",12));
+        words12.add(new Word("Verano ","なつ","",12));
+        words12.add(new Word("Otoño ","あき","",12));
+        words12.add(new Word("Invierno ","ふゆ","",12));
+        words12.add(new Word("Tiempo (clima) ","てんき","",12));
+        words12.add(new Word("Lluvia ","あめ","",12));
+        words12.add(new Word("Nieve","ゆき","",12));
+        words12.add(new Word("Nublado ","くもり","",12));
+        words12.add(new Word("Hotel ","ホテル","",12));
+        words12.add(new Word("Aeropuerto ","くうこう","",12));
+        words12.add(new Word("Mar ","うみ","",12));
+        words12.add(new Word("Mundo ","せかい","",12));
+        words12.add(new Word("Fiesta ","パーティー","",12));
+        words12.add(new Word("Festival ","おまつり","",12));
+        words12.add(new Word("Examen ","しけん","",12));
+        words12.add(new Word("Arreglo floral ","いけばな","",12));
+        words12.add(new Word("Arce","もみじ","",12));
+        words12.add(new Word("Cuál ","どちら","",12));
+        words12.add(new Word("Ambos ","どちらも","",12));
+        words12.add(new Word("Mucho más ","ずっと","",12));
+        words12.add(new Word("Por primera vez ","はじめて","",12));
+
+        words13.add(new Word("Jugar, divertirse ","あそびます","",13));
+        words13.add(new Word("Nadar ","およぎます","",13));
+        words13.add(new Word("Acoger","むかえます","",13));
+        words13.add(new Word("Cansarse ","つかれます ","",13));
+        words13.add(new Word("Enviar (carta) ","だします","",13));
+        words13.add(new Word("Entrar ","はいります","入ります",13));
+        words13.add(new Word("Salir","でます","出ます",13));
+        words13.add(new Word("Casarse ","けっこんします","",13));
+        words13.add(new Word("Hacer compras ","かいものします","買い物します",13));
+        words13.add(new Word("Comer","しょくじします","食事します",13));
+        words13.add(new Word("Pasear ","さんぽします","",13));
+        words13.add(new Word("Duro, difícil ","たいへん","",13));
+        words13.add(new Word("Querer (algo) ","ほしい","",13));
+        words13.add(new Word("(sentirse) solo","さびしい","",13));
+        words13.add(new Word("Amplio ","ひろい","広い",13));
+        words13.add(new Word("Angosto ","せまい","",13));
+        words13.add(new Word("Alcaldía ","しやくしょ","",13));
+        words13.add(new Word("Piscina ","プール","",13));
+        words13.add(new Word("Economía ","けいざい","",13));
+        words13.add(new Word("Bellas artes ","びじゅつ","",13));
+        words13.add(new Word("Pesca ","つり","",13));
+        words13.add(new Word("Esquí ","スキー","",13));
+        words13.add(new Word("Reunión ","かいぎ","",13));
+        words13.add(new Word("Registro ","とうろく","",13));
+        words13.add(new Word("Fin de semana ","しゅうまつ","週末",13));
+        words13.add(new Word("Hacia ~(relativo a tiempo u hora) ","~ごろ","",13));
+        words13.add(new Word("Algo","なにか","何か",13));
+        words13.add(new Word("Algún lugar ","どこか","",13));
+        words13.add(new Word("(tengo) hambre ","おなんがすきました","",13));
+        words13.add(new Word("(estoy) satisfecho ","おなんがいっぱいです","",13));
+        words13.add(new Word("(tengo) sed","のどがかわきました","",13));
+        words13.add(new Word("Estoy de acuerdo ","そうですね","",13));
+        words13.add(new Word("Vamos a hacer eso ","そうしましょ","",13));
+
 
         lessons.setWordsLesson1(words1);
         lessons.setWordsLesson2(words2);
@@ -512,6 +584,7 @@ public class Utils {
         lessons.setWordsLesson10(words10);
         lessons.setWordsLesson11(words11);
         lessons.setWordsLesson12(words12);
+        lessons.setWordsLesson13(words13);
 
 
 
@@ -538,6 +611,7 @@ public class Utils {
         List<Kanji> kanjis10=new ArrayList<Kanji>();
         List<Kanji> kanjis11=new ArrayList<Kanji>();
         List<Kanji> kanjis12=new ArrayList<Kanji>();
+        List<Kanji> kanjis13=new ArrayList<Kanji>();
 
         List<Reading> readings = new ArrayList<Reading>();
         readings.add(new Reading("ひ",true));
@@ -1136,6 +1210,106 @@ public class Utils {
         kanjis11.add(new Kanji("飯","Arroz cocido, comida", readings,12));
         readings = new ArrayList<Reading>();
 
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("タク",false));
+        kanjis12.add(new Kanji("宅","Casa", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("キャク",false));
+        kanjis12.add(new Kanji("客","Invitado ", readings,9));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("シツ",false));
+        kanjis12.add(new Kanji("室","Cuarto ", readings,9));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("いえ",true));
+        readings.add(new Reading("や",true));
+        readings.add(new Reading("カ",false));
+        readings.add(new Reading("ケ",false));
+        kanjis12.add(new Kanji("家","Casa", readings,10));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("エイ",false));
+        kanjis12.add(new Kanji("英","Superb (Inglaterra) ", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("くすり",true));
+        readings.add(new Reading("ヤク",false));
+        kanjis12.add(new Kanji("薬","Medicina ", readings,16));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("あう",true));
+        readings.add(new Reading("カイ",false));
+        kanjis12.add(new Kanji("会","Reunión ", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("いま",true));
+        readings.add(new Reading("コン",false));
+        kanjis12.add(new Kanji("今","Ahora", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("ゆき",true));
+        readings.add(new Reading("セツ",false));
+        kanjis12.add(new Kanji("雪","Nieve", readings,11));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("くも",true));
+        readings.add(new Reading("ウン",false));
+        kanjis12.add(new Kanji("雲","Nube ", readings,12));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("デン",false));
+        kanjis12.add(new Kanji("電","Electricidad ", readings,13));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("うる",true));
+        readings.add(new Reading("バイ",false));
+        kanjis12.add(new Kanji("売","Vender ", readings,7));
+        readings = new ArrayList<Reading>();
+
+        readings.add(new Reading("ひろい",true));
+        readings.add(new Reading("こうy",true));
+        kanjis13.add(new Kanji("広い","Amplio", readings,5));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("みせ",true));
+        readings.add(new Reading("テン",false));
+        kanjis13.add(new Kanji("店","Tienda ", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("ド",false));
+        kanjis13.add(new Kanji("度","Contador veces ", readings,9));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("ビョウ",false));
+        kanjis13.add(new Kanji("病","Enfermo", readings,10));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("つかれる",true));
+        readings.add(new Reading("ヒ",false));
+        kanjis13.add(new Kanji("疲","Cansancio ", readings,10));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("いたい",true));
+        readings.add(new Reading("いたむ ",true));
+        readings.add(new Reading("ツウ",false));
+        kanjis13.add(new Kanji("痛","Dolor", readings,12));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("や",true));
+        readings.add(new Reading("オク",false));
+        kanjis13.add(new Kanji("屋","Techo ", readings,9));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("くに",true));
+        readings.add(new Reading("コク",false));
+        kanjis13.add(new Kanji("国","País ", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("まわる",true));
+        readings.add(new Reading("まわす",true));
+        readings.add(new Reading("カイ",false));
+        kanjis13.add(new Kanji("回","Voltear, contador veces ", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("こまる",true));
+        readings.add(new Reading("コン",false));
+        kanjis13.add(new Kanji("困","Problema ", readings,7));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("あく",true));
+        readings.add(new Reading("ひらく",true));
+        readings.add(new Reading("あける",true));
+        readings.add(new Reading("カイ",false));
+        kanjis13.add(new Kanji("開","Abrir ", readings,12));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("しまる",true));
+        readings.add(new Reading("しめる",true));
+        readings.add(new Reading("とじる",true));
+        readings.add(new Reading("ヘイ",false));
+        kanjis13.add(new Kanji("閉","Cerrar ", readings,11));
+        readings = new ArrayList<Reading>();
+
 
 
         /*readings.add(new Reading("",true));
@@ -1159,6 +1333,7 @@ public class Utils {
         lessons.setKanjisLesson10(kanjis10);
         lessons.setKanjisLesson11(kanjis11);
         lessons.setKanjisLesson12(kanjis12);
+        lessons.setKanjisLesson13(kanjis13);
 
         return lessons;
 
@@ -1179,6 +1354,7 @@ public class Utils {
         List<Word> words10 = new ArrayList<Word>();
         List<Word> words11 = new ArrayList<Word>();
         List<Word> words12 = new ArrayList<Word>();
+        List<Word> words13 = new ArrayList<Word>();
 
         words1.add(new Word("Japon","にほん","日本",1));
         words1.add(new Word("Volcan","かざん","火山",1));
@@ -1435,6 +1611,84 @@ public class Utils {
         words11.add(new Word("Arroz cocinado, comida ","ごはん","ご飯",11));
         words11.add(new Word("Cena ","ゆうはん","夕飯",11));
 
+        words12.add(new Word("Su hogar ","おたく","お宅",12));
+        words12.add(new Word("Mi hogar ","じたく","自宅",12));
+        words12.add(new Word("Alojamiento ","じゅうたく","住宅",12));
+        words12.add(new Word("Ir a casa ","きたくする","帰宅する",12));
+        words12.add(new Word("Invitado ","きゃく","客",12));
+        words12.add(new Word("Pasajero ","じょきゃく","乗客",12));
+        words12.add(new Word("Salón de clase ","きょうしつ","教室",12));
+        words12.add(new Word("Indoor ","しつない","室内",12));
+        words12.add(new Word("Oficina, cuarto para seminario ","けんきゅうしつ","研究室",12));
+        words12.add(new Word("Casa","いえ","家",12));
+        words12.add(new Word("Familia ","かぞく","家族",12));
+        words12.add(new Word("Dueño, casero ","おおや","大家",12));
+        words12.add(new Word("Inglaterra ","えいこく","英国",12));
+        words12.add(new Word("Inglés ","えいご","英語",12));
+        words12.add(new Word("Medicina ","くすり","薬",12));
+        words12.add(new Word("Gotas para los ojos ","めぐすり","目薬",12));
+        words12.add(new Word("Farmacia ","くすりや","薬屋",12));
+        words12.add(new Word("Farmacia ","やっきょく","薬局",12));
+        words12.add(new Word("Encontrarse","あう","会う",12));
+        words12.add(new Word("Empresa ","かいしゃ","会社",12));
+        words12.add(new Word("Conversación ","かいわ","会話",12));
+        words12.add(new Word("Ahora ","いま","今",12));
+        words12.add(new Word("Este año ","ことし","今年",12));
+        words12.add(new Word("Este mes ","こんげつ","今月",12));
+        words12.add(new Word("Hoy ","きょう","今日",12));
+        words12.add(new Word("Nieve ","ゆき","雪",12));
+        words12.add(new Word("País con nieve ","ゆきぐに","雪国",12));
+        words12.add(new Word("Nube ","くも","雲",12));
+        words12.add(new Word("Electricidad ","でんき","電気",12));
+        words12.add(new Word("Teléfono ","でんわ","電話",12));
+        words12.add(new Word("Tren eléctrico ","でんしゃ","電車",12));
+        words12.add(new Word("Vender ","うる","売る",12));
+        words12.add(new Word("Mostrador de ventas","うりば","売り場",12));
+        words12.add(new Word("Puesto de ventas ","ばいてん","売店",12));
+
+        words13.add(new Word("Amplio","ひろい","広い",13));
+        words13.add(new Word("Ancho ","ひろさ","広さ",13));
+        words13.add(new Word("Hiroshima ","ひろしま","広島",13));
+        words13.add(new Word("Anuncio publicitario ","こうこく","広告",13));
+        words13.add(new Word("Tienda","みせ","店",13));
+        words13.add(new Word("Vendedor ","てんいん","店員",13));
+        words13.add(new Word("Librería ","しょてん","書店",13));
+        words13.add(new Word("Tienda principal ","ほんてん","本店",13));
+        words13.add(new Word("Una vez ","いちど","一度",13));
+        words13.add(new Word("Próxima vez","こんど","今度",13));
+        words13.add(new Word("Temperatura ","おんど","温度",13));
+        words13.add(new Word("Velocidad ","そくど","速度",13));
+        words13.add(new Word("Enfermedad ","びょうき","病気",13));
+        words13.add(new Word("Persona enferma ","びょうにん","病人",13));
+        words13.add(new Word("Hospital ","びょういん","病院",13));
+        words13.add(new Word("Estar cansado ","つかれる","疲れる",13));
+        words13.add(new Word("Cansancio ","つかれ","疲れ",13));
+        words13.add(new Word("Doloroso ","いたい","痛い",13));
+        words13.add(new Word("Doler","いたむ","痛む",13));
+        words13.add(new Word("Analgésico ","いたみどめ","痛み止め",13));
+        words13.add(new Word("Dolor de cabeza ","ずつう","頭痛",13));
+        words13.add(new Word("Librería ","ほんや","本屋",13));
+        words13.add(new Word("Carnicería ","にくや","肉屋",13));
+        words13.add(new Word("Techo ","おくじょう","屋上",13));
+        words13.add(new Word("País ","くに","国",13));
+        words13.add(new Word("Universidad Nacional ","こくりつだいがく","国立大学",13));
+        words13.add(new Word("Extranjero ","がいこくじん","外国人",13));
+        words13.add(new Word("Voltear","まわす","回す",13));
+        words13.add(new Word("Dar una vuelta ","まわる","回る",13));
+        words13.add(new Word("Una vez ","いっかい","一回",13));
+        words13.add(new Word("Estar en problemas ","こまる","困る",13));
+        words13.add(new Word("Difícil ","こんなんな","困難な",13));
+        words13.add(new Word("Abrir","あく","開く",13));
+        words13.add(new Word("Abrir (en dos) ","ひらく","開く",13));
+        words13.add(new Word("Iniciar una reunión ","かいかいする","開会する",13));
+        words13.add(new Word("Abrir una tienda ","かいてんする","開店する",13));
+        words13.add(new Word("Cerrar ","しまる","閉まる",13));
+        words13.add(new Word("Cerrar (de dos) ","とじる","閉じる",13));
+        words13.add(new Word("Cerrar una reunión ","へいかいする","閉会する",13));
+        words13.add(new Word("Cerrar una tienda ","へいてんする","閉店する",13));
+
+
+
 
         lessons.setWordsLesson1(words1);
         lessons.setWordsLesson2(words2);
@@ -1448,6 +1702,7 @@ public class Utils {
         lessons.setWordsLesson10(words10);
         lessons.setWordsLesson11(words11);
         lessons.setWordsLesson12(words12);
+        lessons.setWordsLesson13(words13);
 
 
         return lessons;
