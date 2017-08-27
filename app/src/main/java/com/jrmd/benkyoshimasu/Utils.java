@@ -33,6 +33,7 @@ public class Utils {
         List<Word> words11 = new ArrayList<Word>();
         List<Word> words12 = new ArrayList<Word>();
         List<Word> words13 = new ArrayList<Word>();
+        List<Word> words14 = new ArrayList<Word>();
         words1.add(new Word("Maestro/Profesor","せんせい","先生",1));
         words1.add(new Word("Maestro/Profesor","きょうし","",1));
         words1.add(new Word("Estudíante","がくせい","学生",1));
@@ -122,7 +123,7 @@ public class Utils {
         words4.add(new Word("Descanso/día libre","やすみ","",4));
         words4.add(new Word("Descanso de mediodía","ひるやすみ","",4));
         words4.add(new Word("Todas las mañanas","まいあさ","",4));
-        words4.add(new Word("Todas las noches","まいばｎ","",4));
+        words4.add(new Word("Todas las noches","まいばん","",4));
         words4.add(new Word("Todos los días","まいにち","",4));
         words4.add(new Word("Lunes","げつようび","月曜日",4));
         words4.add(new Word("Martes","かようび","火曜日",4));
@@ -571,6 +572,44 @@ public class Utils {
         words13.add(new Word("Estoy de acuerdo ","そうですね","",13));
         words13.add(new Word("Vamos a hacer eso ","そうしましょ","",13));
 
+        words14.add(new Word("Prender, encender ","つけます","",14));
+        words14.add(new Word("Apagar ","けします","",14));
+        words14.add(new Word("Abrir ","あけます","開けます",14));
+        words14.add(new Word("Cerrar ","しめます","閉めます",14));
+        words14.add(new Word("Apresurar, darse prisa ","いそぎます","",14));
+        words14.add(new Word("Esperar ","まちます","",14));
+        words14.add(new Word("Parar, estacionar ","とめます","",14));
+        words14.add(new Word("Doblar [a la derecha] ","まがります","",14));
+        words14.add(new Word("Tener algo en la mano ","もちます","",14));
+        words14.add(new Word("Tomar (en la mano), pasar (algo a alguien) ","とります","",14));
+        words14.add(new Word("Ayudar ","てつだいます","",14));
+        words14.add(new Word("Llamar ","よびます","",14));
+        words14.add(new Word("Hablar ","はなします","話します",14));
+        words14.add(new Word("Mostrar ","みせます","",14));
+        words14.add(new Word("Dar [la dirección ] ","おしえます","",14));
+        words14.add(new Word("Empezar, comenzar ","はじめます","",14));
+        words14.add(new Word("Llover ","ふります","",14));
+        words14.add(new Word("Sacar fotocopia ","コピーします","",14));
+        words14.add(new Word("Aire acondicionado ","エアコン","",14));
+        words14.add(new Word("Pasaporte ","パスポート","",14));
+        words14.add(new Word("Nombre ","なまえ","",14));
+        words14.add(new Word("Dirección, domicilio ","じゅうしょ","",14));
+        words14.add(new Word("Mapa, plano ","ちず","",14));
+        words14.add(new Word("Sal","しお","",14));
+        words14.add(new Word("Azúcar ","さとう","",14));
+        words14.add(new Word("Cómo leer, modo de leer ","よみかた","",14));
+        words14.add(new Word("Cómo ~, manera de ~","~かた ","",14));
+        words14.add(new Word("Despacio ","ゆっくり","",14));
+        words14.add(new Word("Inmediatamente ","すぐ","",14));
+        words14.add(new Word("De nuevo ","また","",14));
+        words14.add(new Word("Después, más tarde ","あとで","",14));
+        words14.add(new Word("Un poco más ","もうすこし","",14));
+        words14.add(new Word("~ más ","もう~","",14));
+        words14.add(new Word("Con gusto ","いいですよ","",14));
+        words14.add(new Word("Expresión para animar a alguien a hacer algo ","さあ","",14));
+        words14.add(new Word("Expresión ante una sorpresa ","あれ? ","",14));
+        words14.add(new Word("Derecho, recto ","まっすぐ","",14));
+
 
         lessons.setWordsLesson1(words1);
         lessons.setWordsLesson2(words2);
@@ -585,6 +624,7 @@ public class Utils {
         lessons.setWordsLesson11(words11);
         lessons.setWordsLesson12(words12);
         lessons.setWordsLesson13(words13);
+        lessons.setWordsLesson14(words14);
 
 
 
@@ -612,6 +652,7 @@ public class Utils {
         List<Kanji> kanjis11=new ArrayList<Kanji>();
         List<Kanji> kanjis12=new ArrayList<Kanji>();
         List<Kanji> kanjis13=new ArrayList<Kanji>();
+        List<Kanji> kanjis14=new ArrayList<Kanji>();
 
         List<Reading> readings = new ArrayList<Reading>();
         readings.add(new Reading("ひ",true));
@@ -1309,6 +1350,57 @@ public class Utils {
         readings.add(new Reading("ヘイ",false));
         kanjis13.add(new Kanji("閉","Cerrar ", readings,11));
         readings = new ArrayList<Reading>();
+        readings.add(new Reading("ちかい",true));
+        readings.add(new Reading("キン",false));
+        kanjis14.add(new Kanji("近","Cerca ", readings,7));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("とおい",true));
+        readings.add(new Reading("エン",false));
+        kanjis14.add(new Kanji("遠","Lejos ", readings,13));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("はやい",true));
+        readings.add(new Reading("ソク",false));
+        kanjis14.add(new Kanji("速い","Rápido ", readings,10));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("おそい",true));
+        readings.add(new Reading("おくれる",true));
+        readings.add(new Reading("チ",false));
+        kanjis14.add(new Kanji("遅","Lento ", readings,12));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("みち",true));
+        readings.add(new Reading("ドウ",false));
+        kanjis14.add(new Kanji("道","Camino ", readings,12));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("あおい",true));
+        readings.add(new Reading("セイ",false));
+        kanjis14.add(new Kanji("青","Azul ", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("はれる",true));
+        readings.add(new Reading("はれ",true));
+        readings.add(new Reading("セイ",false));
+        kanjis14.add(new Kanji("晴","Bien, despejado ", readings,12));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("しずかな",true));
+        readings.add(new Reading("セイ",false));
+        kanjis14.add(new Kanji("静","Silencio, quieto ", readings,14));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("てら",true));
+        readings.add(new Reading("ジ",false));
+        kanjis14.add(new Kanji("寺","Templo ", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("もつ",true));
+        readings.add(new Reading("ジ",false));
+        kanjis14.add(new Kanji("持","Sostener ", readings,9));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("に",true));
+        readings.add(new Reading("カ",false));
+        kanjis14.add(new Kanji("荷","Cargar ", readings,10));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("うた",true));
+        readings.add(new Reading("うたう",true));
+        readings.add(new Reading("カ",false));
+        kanjis14.add(new Kanji("歌","Canción ", readings,14));
+        readings = new ArrayList<Reading>();
 
 
 
@@ -1334,6 +1426,7 @@ public class Utils {
         lessons.setKanjisLesson11(kanjis11);
         lessons.setKanjisLesson12(kanjis12);
         lessons.setKanjisLesson13(kanjis13);
+        lessons.setKanjisLesson14(kanjis14);
 
         return lessons;
 
@@ -1355,6 +1448,7 @@ public class Utils {
         List<Word> words11 = new ArrayList<Word>();
         List<Word> words12 = new ArrayList<Word>();
         List<Word> words13 = new ArrayList<Word>();
+        List<Word> words14 = new ArrayList<Word>();
 
         words1.add(new Word("Japon","にほん","日本",1));
         words1.add(new Word("Volcan","かざん","火山",1));
@@ -1687,6 +1781,44 @@ public class Utils {
         words13.add(new Word("Cerrar una reunión ","へいかいする","閉会する",13));
         words13.add(new Word("Cerrar una tienda ","へいてんする","閉店する",13));
 
+        words14.add(new Word("Cerca","ちかい","近い",14));
+        words14.add(new Word("Cerca","ちかく","近く",14));
+        words14.add(new Word("Barrio ","きんじょ","近所",14));
+        words14.add(new Word("Lejos ","とおい","遠い",14));
+        words14.add(new Word("Lejos ","とおく","遠く",14));
+        words14.add(new Word("Picnic ","えんそく","遠足",14));
+        words14.add(new Word("Rápido","はやい","速い",14));
+        words14.add(new Word("Entrega exprés ","そくたつ","速達",14));
+        words14.add(new Word("Velocidad ","そくど","速度",14));
+        words14.add(new Word("Tarde, lento ","おそい","遅い",14));
+        words14.add(new Word("Ir tarde ","ちこくする","遅刻する",14));
+        words14.add(new Word("Retrasar ","おくれる","遅れる",14));
+        words14.add(new Word("Calle ","みち","道",14));
+        words14.add(new Word("Acera, camino ","ほどう","歩道",14));
+        words14.add(new Word("Abastecimiento ","すいどう","水道",14));
+        words14.add(new Word("Calzada ","じゃどう","車道",14));
+        words14.add(new Word("Azul ","あおい","青",14));
+        words14.add(new Word("Hombre joven ","せいねん","青年",14));
+        words14.add(new Word("Luz verde (semaforo) ","あおしんごう","青信号",14));
+        words14.add(new Word("Buen clima ","はれ","晴れ",14));
+        words14.add(new Word("Buen clima ","せいてん","晴天",14));
+        words14.add(new Word("Aclarar ","はれる","晴れる",14));
+        words14.add(new Word("Silencioso ","しずかな","静かな",14));
+        words14.add(new Word("Estar quieto ","せいしする","静止する",14));
+        words14.add(new Word("Estar en silencio ","しずまる","静まる",14));
+        words14.add(new Word("Templo ","てら","寺",14));
+        words14.add(new Word("Templo todaiji ","とうだうじ","東大寺",14));
+        words14.add(new Word("Tener, poseer ","もつ","持つ",14));
+        words14.add(new Word("Mis pertenencias ","もちもの","持ち物",14));
+        words14.add(new Word("Continuar ","じぞくする","持続する",14));
+        words14.add(new Word("Sentimiento ","きもち","気持ち",14));
+        words14.add(new Word("Equipaje ","にもつ","荷物",14));
+        words14.add(new Word("Equipaje de mano ","てにもつ","手荷物",14));
+        words14.add(new Word("Canción ","うた","歌",14));
+        words14.add(new Word("Cantar ","うたう","歌う",14));
+        words14.add(new Word("Cantante ","かしゅ","歌手",14));
+        words14.add(new Word("El himno nacional ","こっか","国家",14));
+
 
 
 
@@ -1703,6 +1835,7 @@ public class Utils {
         lessons.setWordsLesson11(words11);
         lessons.setWordsLesson12(words12);
         lessons.setWordsLesson13(words13);
+        lessons.setWordsLesson14(words13);
 
 
         return lessons;

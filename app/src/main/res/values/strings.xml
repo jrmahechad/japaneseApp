@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">べんきょします</string>
+    <string name="app_name">勉強します</string>
     <string name="action_settings">Configuración</string>
     <string name="max_lesson">Ultima Lección</string>
     <string name="vocabulary">Vocabulario</string>
@@ -24,6 +24,7 @@
     <string name="lesson11">Lección 11</string>
     <string name="lesson12">Lección 12</string>
     <string name="lesson13">Lección 13</string>
+    <string name="lesson14">Lección 14</string>
 
     <!-- NO TRADUCIR!!!!!!!!!! -->
     <string name="lesson_1_key">lesson_1_key</string>
@@ -39,6 +40,7 @@
     <string name="lesson_11_key">lesson_11_key</string>
     <string name="lesson_12_key">lesson_12_key</string>
     <string name="lesson_13_key">lesson_13_key</string>
+    <string name="lesson_14_key">lesson_14_key</string>
 
     <string name="pref_correct_kanji">pref_correct_kanji</string>
     <string name="pref_incorrect_kanji">pref_incorrect_kanji</string>

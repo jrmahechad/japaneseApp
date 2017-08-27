@@ -21,6 +21,7 @@ public class LessonsKanjis {
     public List<Kanji> kanjisLesson11;
     public List<Kanji> kanjisLesson12;
     public List<Kanji> kanjisLesson13;
+    public List<Kanji> kanjisLesson14;
 
     public List<Kanji> getKanjisLesson1() {
         return kanjisLesson1;
@@ -124,5 +125,13 @@ public class LessonsKanjis {
 
     public void setKanjisLesson13(List<Kanji> kanjisLesson13) {
         this.kanjisLesson13 = kanjisLesson13;
+    }
+
+    public List<Kanji> getKanjisLesson14() {
+        return kanjisLesson14;
+    }
+
+    public void setKanjisLesson14(List<Kanji> kanjisLesson14) {
+        this.kanjisLesson14 = kanjisLesson14;
     }
 }
