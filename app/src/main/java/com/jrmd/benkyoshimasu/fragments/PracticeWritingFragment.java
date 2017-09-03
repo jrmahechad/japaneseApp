@@ -109,6 +109,7 @@ public class PracticeWritingFragment extends Fragment{
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_12_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_13_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_14_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_15_key),false));
         activeLessons= new ArrayList<Integer>();
         for(int i=0;i<tempLessons.size();i++){
             if(tempLessons.get(i))
@@ -168,6 +169,9 @@ public class PracticeWritingFragment extends Fragment{
                 case 14:
                     words.addAll(lessonsWords.getWordsLesson14());
                     break;
+                case 15:
+                    words.addAll(lessonsWords.getWordsLesson15());
+                    break;
                 default:
                     break;
             }
@@ -215,7 +219,7 @@ public class PracticeWritingFragment extends Fragment{
         result= mainWord.getJapanese().equals(mWriteText.getText().toString());
 
         updateAnswerCount(result);
-        Integer delayTime=1000;
+        Integer delayTime=2000;
         if(result){
 
             mWriteText.setBackgroundResource(R.drawable.border_button_correct);
@@ -225,7 +229,7 @@ public class PracticeWritingFragment extends Fragment{
             highlightCorrect();
             mWriteText.setBackgroundResource(R.drawable.border_button_incorrect);
             //optionTextClicked.setTextColor(Color.WHITE);
-            delayTime=2000;
+            delayTime=4000;
         }
 
         Handler mHandler = new Handler();

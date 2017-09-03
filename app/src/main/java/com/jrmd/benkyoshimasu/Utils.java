@@ -34,6 +34,7 @@ public class Utils {
         List<Word> words12 = new ArrayList<Word>();
         List<Word> words13 = new ArrayList<Word>();
         List<Word> words14 = new ArrayList<Word>();
+        List<Word> words15 = new ArrayList<Word>();
         words1.add(new Word("Maestro/Profesor","せんせい","先生",1));
         words1.add(new Word("Maestro/Profesor","きょうし","",1));
         words1.add(new Word("Estudíante","がくせい","学生",1));
@@ -610,6 +611,31 @@ public class Utils {
         words14.add(new Word("Expresión ante una sorpresa ","あれ? ","",14));
         words14.add(new Word("Derecho, recto ","まっすぐ","",14));
 
+        words15.add(new Word("Ponerse de pie","たちます","立ちます",15));
+        words15.add(new Word("Sentarse","すわります","座ります",15));
+        words15.add(new Word("Usar","つかいます","使います",15));
+        words15.add(new Word("Poner, colocar","おきます","置きます",15));
+        words15.add(new Word("Hacer, producir","つくります","作ります",15));
+        words15.add(new Word("Vender","うります","売ります",15));
+        words15.add(new Word("Enterarse","しります","知ります",15));
+        words15.add(new Word("Vivir, residir","すみます","住みます",15));
+        words15.add(new Word("Investigar","けんきゅうします","研究します",15));
+        words15.add(new Word("Saber, conocer","しっています","知っています",15));
+        words15.add(new Word("Estar viviendo","すんでいます","住んでいます",15));
+        words15.add(new Word("Materiales, datos","しりょう","",15));
+        words15.add(new Word("Catálogo","カタログ","",15));
+        words15.add(new Word("Horario","じこくひょう","時刻表",15));
+        words15.add(new Word("Ropa","ふく","ふく",15));
+        words15.add(new Word("Productos","せいひん","",15));
+        words15.add(new Word("Software","ソフト","",15));
+        words15.add(new Word("Campo de especialidad","せんもん","専門",15));
+        words15.add(new Word("Dentista","はいしゃ","",15));
+        words15.add(new Word("Barberia, peluqueria","とこや","床屋",15));
+        words15.add(new Word("Agencia de entradas (teatros, cines)","プレイガイド","",15));
+        words15.add(new Word("Soltero /a","どくしん","",15));
+        words15.add(new Word("Acordarse de","おもいだします","思い出します",15));
+        words15.add(new Word("En particular ","こくに","",15));
+
 
         lessons.setWordsLesson1(words1);
         lessons.setWordsLesson2(words2);
@@ -625,6 +651,7 @@ public class Utils {
         lessons.setWordsLesson12(words12);
         lessons.setWordsLesson13(words13);
         lessons.setWordsLesson14(words14);
+        lessons.setWordsLesson15(words15);
 
 
 
@@ -653,6 +680,7 @@ public class Utils {
         List<Kanji> kanjis12=new ArrayList<Kanji>();
         List<Kanji> kanjis13=new ArrayList<Kanji>();
         List<Kanji> kanjis14=new ArrayList<Kanji>();
+        List<Kanji> kanjis15=new ArrayList<Kanji>();
 
         List<Reading> readings = new ArrayList<Reading>();
         readings.add(new Reading("ひ",true));
@@ -1360,7 +1388,7 @@ public class Utils {
         readings = new ArrayList<Reading>();
         readings.add(new Reading("はやい",true));
         readings.add(new Reading("ソク",false));
-        kanjis14.add(new Kanji("速い","Rápido ", readings,10));
+        kanjis14.add(new Kanji("速","Rápido ", readings,10));
         readings = new ArrayList<Reading>();
         readings.add(new Reading("おそい",true));
         readings.add(new Reading("おくれる",true));
@@ -1402,6 +1430,56 @@ public class Utils {
         kanjis14.add(new Kanji("歌","Canción ", readings,14));
         readings = new ArrayList<Reading>();
 
+        kanjis15.add(new Kanji("友","Amigo ", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("ちち",true));
+        readings.add(new Reading("フ",false));
+        kanjis15.add(new Kanji("父","Padre ", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("はは",true));
+        readings.add(new Reading("ボ",false));
+        kanjis15.add(new Kanji("母","Madre", readings,5));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("あに",true));
+        readings.add(new Reading("ケイ",false));
+        readings.add(new Reading("キョウ",false));
+        kanjis15.add(new Kanji("兄","Hermano mayor ", readings,5));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("あね",true));
+        readings.add(new Reading("シ",false));
+        kanjis15.add(new Kanji("姉","Hermana mayor ", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("おとうと",true));
+        readings.add(new Reading("テイ",false));
+        readings.add(new Reading("ダイ",false));
+        kanjis15.add(new Kanji("弟","Hermano menor ", readings,7));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("いもうと",true));
+        readings.add(new Reading("マイ",false));
+        kanjis15.add(new Kanji("妹","Hermana menor ", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("おっと",true));
+        readings.add(new Reading("フ",false));
+        readings.add(new Reading("フウ",false));
+        kanjis15.add(new Kanji("夫","Esposo ", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("つま",true));
+        readings.add(new Reading("サイ",false));
+        kanjis15.add(new Kanji("妻","Esposa", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("かれ",true));
+        readings.add(new Reading("かの",true));
+        kanjis15.add(new Kanji("彼","Él ", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("おもな",true));
+        readings.add(new Reading("ぬし",true));
+        readings.add(new Reading("シュ",false));
+        kanjis15.add(new Kanji("主","Jefe", readings,5));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("おく",true));
+        kanjis15.add(new Kanji("奥","Interior ", readings,12));
+        readings = new ArrayList<Reading>();
+
 
 
         /*readings.add(new Reading("",true));
@@ -1427,6 +1505,7 @@ public class Utils {
         lessons.setKanjisLesson12(kanjis12);
         lessons.setKanjisLesson13(kanjis13);
         lessons.setKanjisLesson14(kanjis14);
+        lessons.setKanjisLesson15(kanjis15);
 
         return lessons;
 
@@ -1449,6 +1528,7 @@ public class Utils {
         List<Word> words12 = new ArrayList<Word>();
         List<Word> words13 = new ArrayList<Word>();
         List<Word> words14 = new ArrayList<Word>();
+        List<Word> words15 = new ArrayList<Word>();
 
         words1.add(new Word("Japon","にほん","日本",1));
         words1.add(new Word("Volcan","かざん","火山",1));
@@ -1819,6 +1899,42 @@ public class Utils {
         words14.add(new Word("Cantante ","かしゅ","歌手",14));
         words14.add(new Word("El himno nacional ","こっか","国家",14));
 
+        words15.add(new Word("Amigo","ともだち","友だち",15));
+        words15.add(new Word("Amigo","ゆうじん","友人",15));
+        words15.add(new Word("Amistad ","ゆうじょう","友情",15));
+        words15.add(new Word("Mi papá","ちち","父",15));
+        words15.add(new Word("Tu padre","おとうさん","お父さん",15));
+        words15.add(new Word("Padre","ちちおや","父親",15));
+        words15.add(new Word("Padres","ふぼ","父母",15));
+        words15.add(new Word("Mi mamá","はは","母",15));
+        words15.add(new Word("Tu madre","おかあさん","お母さん",15));
+        words15.add(new Word("Madre","ははおや","母親",15));
+        words15.add(new Word("Tierra natal","ぼこく","母国",15));
+        words15.add(new Word("Mi hermano mayor ","あに","兄",15));
+        words15.add(new Word("Hermanos","きょうだい","兄弟",15));
+        words15.add(new Word("Hermano mayor ","にいさん","兄さん",15));
+        words15.add(new Word("Guardianes ","ふけい","父兄",15));
+        words15.add(new Word("Mi hermana mayor ","あね","姉",15));
+        words15.add(new Word("Hermanas ","しまい","姉妹",15));
+        words15.add(new Word("Hermana mayor ","おねえさん","お姉さん",15));
+        words15.add(new Word("Mi hermano menor","おとうと","弟",15));
+        words15.add(new Word("Hijos","してい","子弟",15));
+        words15.add(new Word("Pupilo, discípulo","でし","弟子",15));
+        words15.add(new Word("Mi hermana menor","いもうと","妹",15));
+        words15.add(new Word("Mi esposo","おっと","夫",15));
+        words15.add(new Word("Pareja casada","ふうふ","夫婦",15));
+        words15.add(new Word("~señores","~ふじん","~婦人",15));
+        words15.add(new Word("Mi esposa","つま","妻",15));
+        words15.add(new Word("Esposo y esposa","ふさい","夫妻",15));
+        words15.add(new Word("Él","かれ","彼",15));
+        words15.add(new Word("Ellos","かれら","彼ら",15));
+        words15.add(new Word("Ella","かのじょ","彼女",15));
+        words15.add(new Word("Jefe","おもな","主な",15));
+        words15.add(new Word("Propietario","もちぬし","持ち主",15));
+        words15.add(new Word("Mi esposo, maestro","しゅじん","主人",15));
+        words15.add(new Word("Profundo adentro","おく","奥",15));
+        words15.add(new Word("Madam ","おくさん","奥さん",15));
+
 
 
 
@@ -1835,7 +1951,8 @@ public class Utils {
         lessons.setWordsLesson11(words11);
         lessons.setWordsLesson12(words12);
         lessons.setWordsLesson13(words13);
-        lessons.setWordsLesson14(words13);
+        lessons.setWordsLesson14(words14);
+        lessons.setWordsLesson15(words15);
 
 
         return lessons;

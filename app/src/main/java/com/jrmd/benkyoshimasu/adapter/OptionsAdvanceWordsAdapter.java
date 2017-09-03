@@ -1,6 +1,7 @@
 package com.jrmd.benkyoshimasu.adapter;
 
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +72,7 @@ public class OptionsAdvanceWordsAdapter extends BaseAdapter {
             text=options.get(position).getSpanish();
         }else{
             text=options.get(position).getKanji();
+            optionText.setTextSize(TypedValue.COMPLEX_UNIT_SP,42);
         }
 
         optionText.setText(text);

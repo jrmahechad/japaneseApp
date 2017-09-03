@@ -102,6 +102,7 @@ public class VocabularyFragment extends Fragment{
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_12_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_13_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_14_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_15_key),false));
         activeLessons= new ArrayList<Integer>();
         for(int i=0;i<tempLessons.size();i++){
             if(tempLessons.get(i))
@@ -160,6 +161,9 @@ public class VocabularyFragment extends Fragment{
                     break;
                 case 14:
                     words.addAll(lessonsWords.getWordsLesson14());
+                    break;
+                case 15:
+                    words.addAll(lessonsWords.getWordsLesson15());
                     break;
                 default:
                     break;
@@ -224,7 +228,7 @@ public class VocabularyFragment extends Fragment{
                     result= mainWord.getJapanese().equals(options.get(i).getJapanese());
                 }
                 updateAnswerCount(result);
-                Integer delayTime=1000;
+                Integer delayTime=2000;
                 if(result){
                     v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myGreen));
                     optionTextClicked.setTextColor(Color.WHITE);
@@ -233,7 +237,7 @@ public class VocabularyFragment extends Fragment{
                     highlightCorrect(japanese);
                     v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myRed));
                     optionTextClicked.setTextColor(Color.WHITE);
-                    delayTime=2000;
+                    delayTime=4000;
                 }
 
                 Handler mHandler = new Handler();

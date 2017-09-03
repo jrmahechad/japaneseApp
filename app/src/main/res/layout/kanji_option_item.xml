@@ -7,14 +7,14 @@
     >
 
     <TextView
-        android:text="hola"
         android:id="@+id/kanji_option_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:text="hola"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="42sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
 

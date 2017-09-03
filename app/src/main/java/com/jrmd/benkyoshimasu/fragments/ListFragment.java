@@ -118,6 +118,8 @@ public class ListFragment extends Fragment {
         words.addAll(lessonsWords.getWordsLesson13());
         words.add(new Word("Lección 14","","",-1));
         words.addAll(lessonsWords.getWordsLesson14());
+        words.add(new Word("Lección 15","","",-1));
+        words.addAll(lessonsWords.getWordsLesson15());
 
         final WordsListAdapter wordsAdapter = new WordsListAdapter(getActivity(),words);
         listViewVocabulary.setAdapter(wordsAdapter);
@@ -152,6 +154,8 @@ public class ListFragment extends Fragment {
         kanjis.addAll(lessonsKanjis.getKanjisLesson13());
         kanjis.add(new Kanji("","Lección 14",-1));
         kanjis.addAll(lessonsKanjis.getKanjisLesson14());
+        kanjis.add(new Kanji("","Lección 15",-1));
+        kanjis.addAll(lessonsKanjis.getKanjisLesson15());
 
         final KanjisListAdapter kanjisAdapter = new KanjisListAdapter(getActivity(),kanjis);
         listViewKanjis.setAdapter(kanjisAdapter);
@@ -187,6 +191,8 @@ public class ListFragment extends Fragment {
         advanceWords.addAll(lessonsAdvanceWords.getWordsLesson13());
         advanceWords.add(new Word("Lección 14","","",-1));
         advanceWords.addAll(lessonsAdvanceWords.getWordsLesson14());
+        advanceWords.add(new Word("Lección 15","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson15());
 
         final AdvanceVocabularyListAdapter advanceVocabularyListAdapter = new AdvanceVocabularyListAdapter(getActivity(),advanceWords);
         listViewAdvanceVocabulary.setAdapter(advanceVocabularyListAdapter);

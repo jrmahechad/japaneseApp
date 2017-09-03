@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -111,6 +112,7 @@ public class AdvanceVocabularyFragment extends Fragment{
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_12_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_13_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_14_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_15_key),false));
         activeLessons= new ArrayList<Integer>();
         for(int i=0;i<tempLessons.size();i++){
             if(tempLessons.get(i))
@@ -170,6 +172,9 @@ public class AdvanceVocabularyFragment extends Fragment{
                 case 14:
                     words.addAll(lessonsWords.getWordsLesson14());
                     break;
+                case 15:
+                    words.addAll(lessonsWords.getWordsLesson15());
+                    break;
                 default:
                     break;
             }
@@ -219,6 +224,9 @@ public class AdvanceVocabularyFragment extends Fragment{
                     .make(rootView,getString(R.string.warning_no_vocabulary), Snackbar.LENGTH_LONG).show();
         }
         japanese= selectMainWord();
+        if(japanese==3 || japanese== 5){
+            mMainWord.setTextSize(TypedValue.COMPLEX_UNIT_SP,42);
+        }
         OptionsAdvanceWordsAdapter adapter = new OptionsAdvanceWordsAdapter(getActivity(),options,japanese);
         mOptionGrid.setAdapter(adapter);
         mOptionGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -229,19 +237,20 @@ public class AdvanceVocabularyFragment extends Fragment{
 
                 Boolean result=false;
 
-
+                mCorrectAnswer.setTextSize(TypedValue.COMPLEX_UNIT_SP,22);
                 if(japanese==1||japanese==6){
                     //hiragana
                     result= mainWord.getJapanese().equals(options.get(i).getJapanese());
                 }else if (japanese==3 || japanese==5){
                     //kanji
                     result= mainWord.getKanji().equals(options.get(i).getKanji());
+                    mCorrectAnswer.setTextSize(TypedValue.COMPLEX_UNIT_SP,42);
                 }else{
                     result= mainWord.getSpanish().equals(options.get(i).getSpanish());
                 }
 
                 updateAnswerCount(result);
-                Integer delayTime=1000;
+                Integer delayTime=2000;
                 if(result){
                     v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myGreen));
                     optionTextClicked.setTextColor(Color.WHITE);
@@ -250,7 +259,7 @@ public class AdvanceVocabularyFragment extends Fragment{
                     highlightCorrect(japanese);
                     v.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.myRed));
                     optionTextClicked.setTextColor(Color.WHITE);
-                    delayTime=2000;
+                    delayTime=4000;
                 }
                 mKanji.setVisibility(View.VISIBLE);
                 Handler mHandler = new Handler();

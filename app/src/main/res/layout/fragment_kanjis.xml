@@ -14,28 +14,30 @@
             android:layout_height="0dp"
             android:layout_weight="30"
             android:orientation="vertical">
+
             <TextView
+                android:id="@+id/correct_answer_kanji"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="30"
                 android:layout_gravity="center"
+                android:layout_weight="30"
                 android:gravity="center"
-                android:id="@+id/correct_answer_kanji"
                 android:text="Correct Answer"
-                android:textStyle="bold"
-                android:textSize="30sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/myGreen"/>
+                android:textColor="@color/myGreen"
+                android:textSize="42sp"
+                android:textStyle="bold" />
+
             <TextView
+                android:id="@+id/kanjis_meaning"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Meaning"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_weight="30"
-                android:id="@+id/kanjis_meaning"
+                android:gravity="center"
+                android:text="Meaning"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
+                android:textSize="24sp" />
             <GridView
                 android:layout_marginLeft="@dimen/dim_8pd"
                 android:layout_marginRight="@dimen/dim_8pd"

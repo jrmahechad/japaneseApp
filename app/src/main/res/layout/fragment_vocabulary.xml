@@ -26,15 +26,15 @@
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 />
+
             <TextView
+                android:id="@+id/kanji"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="15"
                 android:gravity="center"
-                android:textSize="24sp"
                 android:text="TextView"
-                android:id="@+id/kanji"
-                />
+                android:textSize="42sp" />
 
             <TextView
                 android:layout_width="match_parent"
