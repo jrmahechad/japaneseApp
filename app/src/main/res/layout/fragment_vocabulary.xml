@@ -16,35 +16,36 @@
             android:layout_weight="45"
             android:padding="@dimen/dim_8pd"
             >
+
             <TextView
+                android:id="@+id/main_word"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="40"
-                android:text="TextView"
-                android:textSize="24sp"
-                android:id="@+id/main_word"
                 android:gravity="center"
+                android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                />
+                android:textSize="36sp" />
 
             <TextView
                 android:id="@+id/kanji"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="15"
+                android:layout_weight="30"
                 android:gravity="center"
                 android:text="TextView"
                 android:textSize="42sp" />
 
             <TextView
+                android:id="@+id/correct_answer_word"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="45"
-                android:id="@+id/correct_answer_word"
-                android:text="TextView"
+                android:layout_weight="30"
                 android:gravity="center"
+                android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/myGreen"/>
+                android:textColor="@color/myGreen"
+                android:textSize="36sp" />
 
         </LinearLayout>
         <LinearLayout
