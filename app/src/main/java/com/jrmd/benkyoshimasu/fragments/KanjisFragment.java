@@ -104,6 +104,7 @@ public class KanjisFragment extends Fragment{
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_13_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_14_key),false));
         tempLessons.add(prefs.getBoolean(getString(R.string.lesson_15_key),false));
+        tempLessons.add(prefs.getBoolean(getString(R.string.lesson_16_key),false));
         activeLessons= new ArrayList<Integer>();
         for(int i=0;i<tempLessons.size();i++){
             if(tempLessons.get(i))
@@ -165,6 +166,9 @@ public class KanjisFragment extends Fragment{
                     break;
                 case 15:
                     kanjis.addAll(lessonsKanjis.getKanjisLesson15());
+                    break;
+                case 16:
+                    kanjis.addAll(lessonsKanjis.getKanjisLesson16());
                     break;
                 default:
                     break;

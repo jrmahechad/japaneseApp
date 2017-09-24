@@ -35,6 +35,7 @@ public class Utils {
         List<Word> words13 = new ArrayList<Word>();
         List<Word> words14 = new ArrayList<Word>();
         List<Word> words15 = new ArrayList<Word>();
+        List<Word> words16 = new ArrayList<Word>();
         words1.add(new Word("Maestro/Profesor","せんせい","先生",1));
         words1.add(new Word("Maestro/Profesor","きょうし","",1));
         words1.add(new Word("Estudíante","がくせい","学生",1));
@@ -636,6 +637,53 @@ public class Utils {
         words15.add(new Word("Acordarse de","おもいだします","思い出します",15));
         words15.add(new Word("En particular ","こくに","",15));
 
+        words16.add(new Word("Subir (en tren)","のります","乗ります",16));
+        words16.add(new Word("Bajar (del tren)","おります","降ります",16));
+        words16.add(new Word("Hacer transbordo","のりかえます","乗り換えます",16));
+        words16.add(new Word("Ducharse","あびます","浴びます",16));
+        words16.add(new Word("Incorporar, insertar","いれます","入れます",16));
+        words16.add(new Word("Extraer, retirar (dinero)","だします","出します",16));
+        words16.add(new Word("Entrar, ingresar","はいります","入ります",16));
+        words16.add(new Word("Salir, graduarse","でます","出ます",16));
+        words16.add(new Word("Dimitir, dejar de","やめます","",16));
+        words16.add(new Word("Presionar, empujar","おします","押します",16));
+        words16.add(new Word("Joven","わかい","若い",16));
+        words16.add(new Word("Largo","ながい","長い",16));
+        words16.add(new Word("Corto","みじかい","短い",16));
+        words16.add(new Word("Claro","あかるう","明るい",16));
+        words16.add(new Word("Oscuro","くらい","暗い",16));
+        words16.add(new Word("Alto ( relativo a gente (","せがたかい","背が高い",16));
+        words16.add(new Word("Inteligente","あたまがいい","頭がいい",16));
+        words16.add(new Word("Cuerpo","からだ","体",16));
+        words16.add(new Word("Cabeza","あたま","頭",16));
+        words16.add(new Word("Cabello","かみ","髪",16));
+        words16.add(new Word("Cara","かお","顔",16));
+        words16.add(new Word("Ojos","め","目",16));
+        words16.add(new Word("Orejas","みみ","耳",16));
+        words16.add(new Word("Boca","くち","口",16));
+        words16.add(new Word("Diente","は","歯",16));
+        words16.add(new Word("Estómago","おなか","",16));
+        words16.add(new Word("Por, pierna","あし","足",16));
+        words16.add(new Word("Servicio","サービス","",16));
+        words16.add(new Word("Joggin","ジョギング","",16));
+        words16.add(new Word("Ducha","シャワー","",16));
+        words16.add(new Word("Verde, zona arboleda","みどり","緑",16));
+        words16.add(new Word("Templo budista","おてら","お寺",16));
+        words16.add(new Word("Templo sintoista","じんじゃ","神社",16));
+        words16.add(new Word("Estudiante extranjero","りゅがくせい","留学生",16));
+        words16.add(new Word("Número -","ーばん","",16));
+        words16.add(new Word("Cómo, de qué manera","どうやって","",16));
+        words16.add(new Word("Cuál ~","どの~","",16));
+        words16.add(new Word("[no] todavía falta mucho","【いいえ】まだまだです","",16));
+        words16.add(new Word("¿Vas a retirar dinero?","おひきだしますか","お引き出しますか",16));
+        words16.add(new Word("Primero","まず","",16));
+        words16.add(new Word("Tarjeta bancaria","キャッシュカード","",16));
+        words16.add(new Word("Código personal de identificación","あんしょうばんごう","暗証番号",16));
+        words16.add(new Word("A continuación","つぎに","次に",16));
+        words16.add(new Word("Importe de dinero","きんがく","金額",16));
+        words16.add(new Word("Confirmación","かくにん","確認",16));
+        words16.add(new Word("Botón","ボタン","",16));
+
 
         lessons.setWordsLesson1(words1);
         lessons.setWordsLesson2(words2);
@@ -652,6 +700,7 @@ public class Utils {
         lessons.setWordsLesson13(words13);
         lessons.setWordsLesson14(words14);
         lessons.setWordsLesson15(words15);
+        lessons.setWordsLesson16(words16);
 
 
 
@@ -681,6 +730,7 @@ public class Utils {
         List<Kanji> kanjis13=new ArrayList<Kanji>();
         List<Kanji> kanjis14=new ArrayList<Kanji>();
         List<Kanji> kanjis15=new ArrayList<Kanji>();
+        List<Kanji> kanjis16=new ArrayList<Kanji>();
 
         List<Reading> readings = new ArrayList<Reading>();
         readings.add(new Reading("ひ",true));
@@ -1480,6 +1530,55 @@ public class Utils {
         kanjis15.add(new Kanji("奥","Interior ", readings,12));
         readings = new ArrayList<Reading>();
 
+        kanjis16.add(new Kanji("元","Origen, base", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("キ",false));
+        kanjis16.add(new Kanji("気","Espíritu, mente, aire", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("ある",true));
+        readings.add(new Reading("ユウ",false));
+        kanjis16.add(new Kanji("有","Tener, existir", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("な",true));
+        readings.add(new Reading("メイ",false));
+        readings.add(new Reading("ミョウ",false));
+        kanjis16.add(new Kanji("名","Nombre, famoso, miembros", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("おや",true));
+        readings.add(new Reading("した",true));
+        readings.add(new Reading("シン",false));
+        kanjis16.add(new Kanji("親","Padre, amabilidad", readings,16));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("きる",true));
+        readings.add(new Reading("きっ",true));
+        readings.add(new Reading("セツ",false));
+        kanjis16.add(new Kanji("切","Cortar, final", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("たよ",true));
+        readings.add(new Reading("ベン",false));
+        readings.add(new Reading("ビン",false));
+        kanjis16.add(new Kanji("便","Conveniente, trágico", readings,9));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("きく",true));
+        readings.add(new Reading("リ",false));
+        kanjis16.add(new Kanji("利","Ganancia", readings,7));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("フ",false));
+        readings.add(new Reading("ブー",false));
+        kanjis16.add(new Kanji("不","In-, no", readings,4));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("わかい",true));
+        kanjis16.add(new Kanji("若","Joven", readings,8));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("はやい",true));
+        readings.add(new Reading("ソウ",false));
+        kanjis16.add(new Kanji("早","Temprano", readings,6));
+        readings = new ArrayList<Reading>();
+        readings.add(new Reading("いそがしい",true));
+        readings.add(new Reading("ぼう",true));
+        kanjis16.add(new Kanji("忙","Ocupado", readings,6));
+        readings = new ArrayList<Reading>();
+
 
 
         /*readings.add(new Reading("",true));
@@ -1506,6 +1605,7 @@ public class Utils {
         lessons.setKanjisLesson13(kanjis13);
         lessons.setKanjisLesson14(kanjis14);
         lessons.setKanjisLesson15(kanjis15);
+        lessons.setKanjisLesson16(kanjis16);
 
         return lessons;
 
@@ -1529,6 +1629,7 @@ public class Utils {
         List<Word> words13 = new ArrayList<Word>();
         List<Word> words14 = new ArrayList<Word>();
         List<Word> words15 = new ArrayList<Word>();
+        List<Word> words16 = new ArrayList<Word>();
 
         words1.add(new Word("Japon","にほん","日本",1));
         words1.add(new Word("Volcan","かざん","火山",1));
@@ -1935,6 +2036,49 @@ public class Utils {
         words15.add(new Word("Profundo adentro","おく","奥",15));
         words15.add(new Word("Madam ","おくさん","奥さん",15));
 
+        words16.add(new Word("Saludable, bien","げんきな","元気な",16));
+        words16.add(new Word("Día de año nuevo","がんじつ","元日",16));
+        words16.add(new Word("Sentimiento","きもち","気持ち",16));
+        words16.add(new Word("Clima","てんき","天気",16));
+        words16.add(new Word("Estado de ánimo","きぶん","気分",16));
+        words16.add(new Word("Enfermedad","びょうき","病気",16));
+        words16.add(new Word("Existir, tener","ある","有る",16));
+        words16.add(new Word("Poderoso","ゆうりょくな","有力な",16));
+        words16.add(new Word("Famoso","ゆうめいな","有名な",16));
+        words16.add(new Word("Poseer","しょゆうする","所有する",16));
+        words16.add(new Word("Nombre","なまえ","名前",16));
+        words16.add(new Word("Lugar famoso ","めいしょ","名所",16));
+        words16.add(new Word("Nagoya ","なごや","名古屋",16));
+        words16.add(new Word("Especialidad local","めいぶつ","名物",16));
+        words16.add(new Word("Un padre","おや","親",16));
+        words16.add(new Word("Amigable","したしい","親しい",16));
+        words16.add(new Word("Padre","ちちおや","父親",16));
+        words16.add(new Word("Amable","しんせつな","親切な",16));
+        words16.add(new Word("Cortar","きる","切る",16));
+        words16.add(new Word("Tiquete","きっぷ","切符",16));
+        words16.add(new Word("Estampilla","きって","切手",16));
+        words16.add(new Word("Importante","たいせつな","大切な",16));
+        words16.add(new Word("Carta, noticias","たより","便り",16));
+        words16.add(new Word("Correo aéreo","こうくうびん","航空便",16));
+        words16.add(new Word("Conveniente","べんりな","便利な",16));
+        words16.add(new Word("Retrete","べんじょ","便所",16));
+        words16.add(new Word("Zurdo","ひがりきき","左利き",16));
+        words16.add(new Word("Interés de banco","りし","利子",16));
+        words16.add(new Word("Ventajoso","ゆうりな","有利な",16));
+        words16.add(new Word("Usar","りようする","利用する",16));
+        words16.add(new Word("Inconveniente","ふべんな","不便な",16));
+        words16.add(new Word("Falta de","ふそくする","不足する",16));
+        words16.add(new Word("Sin suerte","ふうんな","不運な",16));
+        words16.add(new Word("Cruel","ふしんせつな","不親切な",16));
+        words16.add(new Word("Joven","わかい","若い",16));
+        words16.add(new Word("Joven","わかもの","若者",16));
+        words16.add(new Word("Juventud","わかき","若き",16));
+        words16.add(new Word("Temprano","はやい","早い",16));
+        words16.add(new Word("Madrugada","そうちょう","早朝",16));
+        words16.add(new Word("Temprano, pronto","はやき","早く",16));
+        words16.add(new Word("Ocupado","いそがしい","忙しい",16));
+        words16.add(new Word("Muy ocupado","たぼうな","多忙な",16));
+
 
 
 
@@ -1953,6 +2097,7 @@ public class Utils {
         lessons.setWordsLesson13(words13);
         lessons.setWordsLesson14(words14);
         lessons.setWordsLesson15(words15);
+        lessons.setWordsLesson16(words16);
 
 
         return lessons;
