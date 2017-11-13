@@ -24,6 +24,10 @@ public class LessonsWords {
     public List<Word> wordsLesson14;
     public List<Word> wordsLesson15;
     public List<Word> wordsLesson16;
+    public List<Word> wordsLesson17;
+    public List<Word> wordsLesson18;
+    public List<Word> wordsLesson19;
+    public List<Word> wordsLesson20;
 
     public List<Word> getWordsLesson1() {
         return wordsLesson1;
@@ -152,4 +156,37 @@ public class LessonsWords {
     public void setWordsLesson16(List<Word> wordsLesson16) {
         this.wordsLesson16 = wordsLesson16;
     }
+
+    public List<Word> getWordsLesson17() {
+        return wordsLesson17;
+    }
+
+    public void setWordsLesson17(List<Word> wordsLesson17) {
+        this.wordsLesson17 = wordsLesson17;
+    }
+
+    public List<Word> getWordsLesson18() {
+        return wordsLesson18;
+    }
+
+    public void setWordsLesson18(List<Word> wordsLesson18) {
+        this.wordsLesson18 = wordsLesson18;
+    }
+
+    public List<Word> getWordsLesson19() {
+        return wordsLesson19;
+    }
+
+    public void setWordsLesson19(List<Word> wordsLesson19) {
+        this.wordsLesson19 = wordsLesson19;
+    }
+
+    public List<Word> getWordsLesson20() {
+        return wordsLesson20;
+    }
+
+    public void setWordsLesson20(List<Word> wordsLesson20) {
+        this.wordsLesson20 = wordsLesson20;
+    }
 }
+

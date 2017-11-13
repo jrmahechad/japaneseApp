@@ -199,6 +199,15 @@ public class ListFragment extends Fragment {
         advanceWords.addAll(lessonsAdvanceWords.getWordsLesson15());
         advanceWords.add(new Word("Lección 16","","",-1));
         advanceWords.addAll(lessonsAdvanceWords.getWordsLesson16());
+        advanceWords.add(new Word("Lección 17","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson17());
+        advanceWords.add(new Word("Lección 18","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson18());
+        advanceWords.add(new Word("Lección 19","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson19());
+        advanceWords.add(new Word("Lección 20","","",-1));
+        advanceWords.addAll(lessonsAdvanceWords.getWordsLesson20());
+
 
         final AdvanceVocabularyListAdapter advanceVocabularyListAdapter = new AdvanceVocabularyListAdapter(getActivity(),advanceWords);
         listViewAdvanceVocabulary.setAdapter(advanceVocabularyListAdapter);

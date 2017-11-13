@@ -24,6 +24,10 @@ public class LessonsKanjis {
     public List<Kanji> kanjisLesson14;
     public List<Kanji> kanjisLesson15;
     public List<Kanji> kanjisLesson16;
+    public List<Kanji> kanjisLesson17;
+    public List<Kanji> kanjisLesson18;
+    public List<Kanji> kanjisLesson19;
+    public List<Kanji> kanjisLesson20;
 
     public List<Kanji> getKanjisLesson1() {
         return kanjisLesson1;
@@ -151,5 +155,37 @@ public class LessonsKanjis {
 
     public void setKanjisLesson16(List<Kanji> kanjisLesson16) {
         this.kanjisLesson16 = kanjisLesson16;
+    }
+
+    public List<Kanji> getKanjisLesson17() {
+        return kanjisLesson17;
+    }
+
+    public void setKanjisLesson17(List<Kanji> kanjisLesson17) {
+        this.kanjisLesson17 = kanjisLesson17;
+    }
+
+    public List<Kanji> getKanjisLesson18() {
+        return kanjisLesson18;
+    }
+
+    public void setKanjisLesson18(List<Kanji> kanjisLesson18) {
+        this.kanjisLesson18 = kanjisLesson18;
+    }
+
+    public List<Kanji> getKanjisLesson19() {
+        return kanjisLesson19;
+    }
+
+    public void setKanjisLesson19(List<Kanji> kanjisLesson19) {
+        this.kanjisLesson19 = kanjisLesson19;
+    }
+
+    public List<Kanji> getKanjisLesson20() {
+        return kanjisLesson20;
+    }
+
+    public void setKanjisLesson20(List<Kanji> kanjisLesson20) {
+        this.kanjisLesson20 = kanjisLesson20;
     }
 }
